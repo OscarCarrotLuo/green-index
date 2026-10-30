@@ -1,0 +1,12 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {rankCities} from '../src/ranking.ts';
+import type {ResearchRow} from '../src/research.ts';
+const codes=['35620','37980','16980'];
+const row=(msa_code:string,index_equal:number|null,extra:Partial<ResearchRow>={}):ResearchRow=>({scope_id:msa_code,msa_code,year:2026,scope_type:'pilot_footprint',footprint_id:msa_code,reference_id:'frozen-reference',score_status:'conditional_pilot',solar_share:null,energy_ratio:null,vegetation_share:null,solar_coverage:null,energy_coverage:null,vegetation_coverage:null,index_equal,...extra});
+test('empty exports leave every city unranked',()=>{assert.deepEqual(rankCities(codes,[]).entries.map(e=>[e.score,e.rank]),[[null,null],[null,null],[null,null]])});
+test('comparable scores sort descending and preserve ties',()=>{const result=rankCities(codes,[row(codes[0],62),row(codes[1],81),row(codes[2],81)]);assert.equal(result.comparable,true);assert.deepEqual(result.entries.map(e=>[e.msaCode,e.rank]),[[codes[1],1],[codes[2],1],[codes[0],3]])});
+test('a different reference or year prevents ranking',()=>{for(const extra of [{reference_id:'other'},{year:2025},{scope_type:'other'},{reference_id:''}])assert.equal(rankCities(codes,[row(codes[0],62),row(codes[1],81,extra)]).comparable,false)});
+test('duplicate scopes are withheld, not aggregated',()=>{const result=rankCities(codes,[row(codes[0],62),row(codes[0],81),row(codes[1],71)]);assert.equal(result.entries[0].score,null);assert.equal(result.comparable,false)});
+test('ineligible and non-finite scores cannot rank',()=>{const result=rankCities(codes,[row(codes[0],80,{score_status:'insufficient_data'}),row(codes[1],NaN),row(codes[2],102)]);assert.equal(result.scored,0)});
+test('zero is a real score, missing stays missing',()=>{const result=rankCities(codes,[row(codes[0],0),row(codes[1],50),row(codes[2],null)]);assert.deepEqual(result.entries.map(e=>[e.score,e.rank]),[[50,1],[0,2],[null,null]])});
