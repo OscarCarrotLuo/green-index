@@ -25,8 +25,8 @@ function drawFile(city:City,active:boolean,score:string,image?:HTMLImageElement,
   const c=canvas.getContext('2d')!;c.scale(2/3,2/3);
   c.beginPath();c.roundRect(3,3,762,1044,39);c.clip();
   const glass=c.createLinearGradient(0,0,768,1050);
-  if(active){glass.addColorStop(0,'rgba(178,250,185,.63)');glass.addColorStop(.35,'rgba(40,153,76,.68)');glass.addColorStop(1,'rgba(15,65,38,.91)')}
-  else{glass.addColorStop(0,'rgba(237,248,240,.36)');glass.addColorStop(.3,'rgba(218,234,222,.14)');glass.addColorStop(.72,'rgba(220,239,225,.11)');glass.addColorStop(1,'rgba(237,250,241,.3)')}
+  if(active){glass.addColorStop(0,'rgba(206,255,221,.76)');glass.addColorStop(.35,'rgba(64,186,100,.72)');glass.addColorStop(1,'rgba(17,75,44,.93)')}
+  else{glass.addColorStop(0,'rgba(226,239,233,.42)');glass.addColorStop(.3,'rgba(206,225,217,.15)');glass.addColorStop(.72,'rgba(210,231,220,.10)');glass.addColorStop(1,'rgba(229,245,236,.30)')}
   c.fillStyle=glass;c.fillRect(0,0,768,1050);
   const shine=c.createLinearGradient(0,0,768,380);
   shine.addColorStop(0,'rgba(255,255,255,.28)');shine.addColorStop(.32,'rgba(255,255,255,0)');shine.addColorStop(.72,'rgba(255,255,255,.03)');shine.addColorStop(1,'rgba(255,255,255,.17)');
@@ -34,24 +34,24 @@ function drawFile(city:City,active:boolean,score:string,image?:HTMLImageElement,
   c.strokeStyle=active?'rgba(228,255,231,.92)':'rgba(244,255,248,.75)';c.lineWidth=4;
   c.beginPath();c.roundRect(6,6,756,1038,37);c.stroke();
   c.strokeStyle='rgba(245,255,248,.22)';c.lineWidth=1.5;c.beginPath();c.roundRect(17,17,734,1016,31);c.stroke();
-  c.fillStyle=active?'#eaffdf':'#edf4ef';c.font='400 25px Manrope, sans-serif';c.fillText(active&&activeHeader?activeHeader:`MSA ${city.msaCode}`,62,89);
+  c.fillStyle=active?'#123e27':'#edf4ef';c.font='500 31px Urbanist, sans-serif';c.fillText(active&&activeHeader?activeHeader:`MSA ${city.msaCode}`,62,89);
   // Draw the launch icon in the same stroke vocabulary as the DOM controls.
   c.strokeStyle=c.fillStyle;c.lineWidth=5;c.beginPath();c.moveTo(666,69);c.lineTo(701,69);c.lineTo(701,104);c.moveTo(701,69);c.lineTo(663,107);c.stroke();
   if(image){
-    c.save();c.globalAlpha=active?.5:.19;c.filter=active?'grayscale(0.7) contrast(1.1)':'grayscale(1) brightness(1.7)';
+    c.save();c.globalAlpha=active?.48:.22;c.filter=active?'grayscale(0.7) contrast(1.1)':'grayscale(1) brightness(1.7)';
     c.drawImage(image,0,170,768,390);c.restore();
   }
   c.save();c.strokeStyle=active?'rgba(219,255,223,.3)':'rgba(237,255,242,.18)';c.lineWidth=2;
   c.beginPath();c.arc(384,355,62,0,Math.PI*2);c.moveTo(384,270);c.lineTo(384,440);c.moveTo(299,355);c.lineTo(469,355);c.stroke();c.restore();
-  c.fillStyle=active?'rgba(235,255,231,.72)':'rgba(243,255,245,.24)';c.font='500 104px Manrope, sans-serif';c.textAlign='right';c.fillText(city.short,708,535);c.textAlign='left';
-  c.fillStyle=active?'#f1ffea':'rgba(240,246,241,.8)';let fontSize=64;c.font=`400 ${fontSize}px Manrope, sans-serif`;while(c.measureText(city.name).width>648&&fontSize>32){fontSize-=2;c.font=`400 ${fontSize}px Manrope, sans-serif`}c.fillText(city.name,60,active?660:925);
-  c.fillStyle=active?'#c6e9bd':'rgba(211,223,213,.65)';c.font='400 22px Manrope, sans-serif';c.fillText('CITY ARCHIVE',62,active?711:977);
+  c.fillStyle=active?'rgba(235,255,231,.72)':'rgba(243,255,245,.24)';c.font='500 104px Urbanist, sans-serif';c.textAlign='right';c.fillText(city.short,708,535);c.textAlign='left';
+  c.fillStyle=active?'#f1ffea':'rgba(240,246,241,.8)';let fontSize=64;c.font=`400 ${fontSize}px Urbanist, sans-serif`;while(c.measureText(city.name).width>648&&fontSize>32){fontSize-=2;c.font=`400 ${fontSize}px Urbanist, sans-serif`}c.fillText(city.name,60,active?660:925);
+  c.fillStyle=active?'#c6e9bd':'rgba(211,223,213,.65)';c.font='400 29px Urbanist, sans-serif';c.fillText(city.region,62,active?711:977);
   if(!active)return canvas;
   c.strokeStyle='rgba(230,255,232,.24)';c.lineWidth=2;c.beginPath();c.moveTo(62,785);c.lineTo(706,785);c.stroke();
-  c.fillStyle=active?'#d1ecc7':'#d7e2d9';c.font='400 24px Manrope, sans-serif';c.fillText(metricLabel,62,845);
-  c.fillStyle=active?'#efffe8':'#edf5ee';c.font='400 68px Manrope, sans-serif';c.fillText(active?score:'—',62,948);
+  c.fillStyle=active?'#d1ecc7':'#d7e2d9';c.font='400 31px Urbanist, sans-serif';c.fillText(metricLabel,62,845);
+  c.fillStyle=active?'#efffe8':'#edf5ee';c.font='400 68px Urbanist, sans-serif';c.fillText(active?score:'—',62,948);
   const scoreWidth=c.measureText(score).width;
-  c.font='400 22px Manrope, sans-serif';c.fillStyle=active?'#c6e9bd':'#c9d8cd';c.fillText(metricUnit,78+scoreWidth,944);
+  c.font='400 29px Urbanist, sans-serif';c.fillStyle=active?'#c6e9bd':'#c9d8cd';c.fillText(metricUnit,78+scoreWidth,944);
   return canvas;
 }
 
@@ -137,7 +137,7 @@ function Rack({selected,dragPosition,dragging,score,metricLabel,metricUnit,activ
       <Lightformer form="rect" intensity={3} color="#effff1" position={[-4,4,3]} scale={[4,9,1]} rotation-y={Math.PI/4}/>
       <Lightformer form="rect" intensity={2} position={[5,1,4]} scale={[2,7,1]} rotation-y={-Math.PI/4}/>
     </Environment>
-    {Array.from({length:FILES},(_,i)=><group key={i} ref={el=>{files.current[i]=el}} onClick={e=>{e.stopPropagation();onChoose(i)}} onPointerOver={e=>{e.stopPropagation();gl.domElement.style.cursor='pointer'}} onPointerOut={()=>{gl.domElement.style.cursor='grab'}}>
+    {Array.from({length:FILES},(_,i)=><group key={i} ref={el=>{files.current[i]=el}} onClick={e=>{e.stopPropagation();if(e.delta<6)onChoose(i)}} onPointerOver={e=>{e.stopPropagation();gl.domElement.style.cursor='pointer'}} onPointerOut={()=>{gl.domElement.style.cursor='grab'}}>
       <mesh geometry={geometry.body}>
         <meshPhysicalMaterial color="#d3e6da" transparent opacity={.1} roughness={.18} metalness={.05} clearcoat={1} clearcoatRoughness={.1} depthWrite={false}/>
       </mesh>

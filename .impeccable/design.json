@@ -1,0 +1,283 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-30T03:03:57.668288+00:00",
+  "title": "Design System: Green Transition Atlas",
+  "extensions": {
+    "colorMeta": {
+      "harmony-green": {
+        "role": "primary",
+        "displayName": "Harmony Green"
+      },
+      "ink-green": {
+        "role": "neutral",
+        "displayName": "Ink Green"
+      },
+      "silver-ink": {
+        "role": "neutral",
+        "displayName": "Silver Ink"
+      },
+      "muted-sage": {
+        "role": "neutral",
+        "displayName": "Muted Sage"
+      },
+      "fine-line": {
+        "role": "neutral",
+        "displayName": "Fine Line"
+      },
+      "action-mint": {
+        "role": "primary",
+        "displayName": "Action Mint"
+      },
+      "action-ink": {
+        "role": "primary",
+        "displayName": "Action Ink"
+      },
+      "round-action-mint": {
+        "role": "primary",
+        "displayName": "Round Action Mint"
+      },
+      "round-action-ink": {
+        "role": "primary",
+        "displayName": "Round Action Ink"
+      },
+      "satellite": {
+        "role": "neutral",
+        "displayName": "Satellite"
+      },
+      "solar": {
+        "role": "secondary",
+        "displayName": "Solar"
+      },
+      "buildings": {
+        "role": "secondary",
+        "displayName": "Buildings"
+      },
+      "vegetation": {
+        "role": "secondary",
+        "displayName": "Vegetation"
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "National atlas heading."
+      },
+      "city-display": {
+        "displayName": "City Display",
+        "purpose": "Selected city heading."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Archive section title."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "City insight title."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Atlas introduction."
+      },
+      "reading": {
+        "displayName": "Reading",
+        "purpose": "Source and methodology reading copy."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Main navigation and compact controls."
+      },
+      "metric": {
+        "displayName": "Metric",
+        "purpose": "City research metric value; tabular figures."
+      }
+    },
+    "shadows": [
+      {
+        "name": "glass-rim",
+        "value": "inset 0 1px 0 #e4fff043,inset 1px 0 0 #e4fff019,inset 0 -1px 0 #e4fff016",
+        "purpose": "The shared directional lit edge on glass surfaces."
+      },
+      {
+        "name": "glass-ambient",
+        "value": "0 14px 38px #0004",
+        "purpose": "Soft depth beneath the common glass material."
+      },
+      {
+        "name": "file-face",
+        "value": "inset 0 1px 1px #f2fff6b0,inset 1px 0 1px #f0fff46b,8px 16px 32px #0004",
+        "purpose": "The physical edge and diffuse cast shadow on the DOM archive fallback."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease",
+        "value": "cubic-bezier(.16,1,.3,1)",
+        "purpose": "Shared control, drawer and fallback-file easing."
+      },
+      {
+        "name": "file-transform",
+        "value": ".72s",
+        "purpose": "Settling duration for DOM fallback file transforms."
+      },
+      {
+        "name": "rack-settling",
+        "value": "exponential settling: 1 - exp(-delta * 13)",
+        "purpose": "WebGL rack settling; immediate under reduced motion or drag."
+      },
+      {
+        "name": "drawer-entry",
+        "value": ".45s; translateX(32px) to 0; opacity .6 to 1",
+        "purpose": "Source and methodology drawer entrance."
+      },
+      {
+        "name": "route-exit",
+        "value": ".24s ease; opacity 0; blur(5px); scale(.99)",
+        "purpose": "Outgoing page transition."
+      },
+      {
+        "name": "route-entry",
+        "value": ".55s; opacity 0 to 1; blur(5px) to 0; scale(1.025) to 1",
+        "purpose": "Incoming page transition with the shared easing curve."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "narrow-fallback-max",
+        "value": "760px"
+      },
+      {
+        "name": "webgl-min",
+        "value": "761px"
+      },
+      {
+        "name": "compact-desktop-max",
+        "value": "1000px"
+      },
+      {
+        "name": "tight-desktop-max",
+        "value": "1200px"
+      },
+      {
+        "name": "wide-desktop-min",
+        "value": "1600px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Catalog download",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The filled action from the source drawer.",
+      "html": "<button class=\"ds-primary\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3\"/></svg>Download city catalog</button>",
+      "css": ".ds-primary{display:flex;align-items:center;justify-content:center;gap:12px;width:100%;padding:16px;background:#bce4c5;color:#173720;border:0;border-radius:999px;font:14px Urbanist,sans-serif;cursor:pointer}.ds-primary:focus-visible{outline:2px solid var(--green,#8bebaa);outline-offset:5px}.ds-primary:disabled{opacity:.45;cursor:default}"
+    },
+    {
+      "name": "Glass catalog action",
+      "kind": "button",
+      "refersTo": "button-glass",
+      "description": "A light glass action with count, as used above the archive.",
+      "html": "<button class=\"ds-catalog\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m6 14 1.5-2.9A2 2 0 0 1 9.24 10H20a2 2 0 0 1 1.94 2.5l-1.55 6a2 2 0 0 1-1.94 1.5H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.67.9H18a2 2 0 0 1 2 2v2\"/></svg>All cities<span>20</span></button>",
+      "css": ".ds-catalog{background:var(--glass,linear-gradient(125deg,#e2f4e91c,#829f8f0a 38%,#111e18c9 85%));box-shadow:var(--rim,inset 0 1px 0 #e4fff043,inset 1px 0 0 #e4fff019,inset 0 -1px 0 #e4fff016),var(--shadow,0 14px 38px #0004);backdrop-filter:blur(24px) saturate(120%);-webkit-backdrop-filter:blur(24px) saturate(120%);border-radius:16px;display:flex;align-items:center;gap:11px;font:13px Urbanist,sans-serif;color:var(--ink,#edf3f0);padding:13px 19px;border:0;border-radius:999px;cursor:pointer}.ds-catalog span{color:#adcfb9;padding-left:8px;border-left:1px solid #cfe9d52b}.ds-catalog:hover{background:#c8efd91f}.ds-catalog:focus-visible{outline:2px solid var(--green,#8bebaa);outline-offset:5px}"
+    },
+    {
+      "name": "Round map entry",
+      "kind": "button",
+      "refersTo": "button-round",
+      "description": "The dossier action that opens the selected city.",
+      "html": "<button class=\"ds-round\" aria-label=\"Explore city map\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M7 7h10v10M7 17 17 7\"/></svg></button>",
+      "css": ".ds-round{width:47px;height:47px;border:0;border-radius:50%;display:grid;place-items:center;background:#bfeacc;color:#173a25;cursor:pointer;transition:transform .3s var(--ease,cubic-bezier(.16,1,.3,1))}.ds-round:hover{transform:rotate(45deg)}.ds-round:focus-visible{outline:2px solid var(--green,#8bebaa);outline-offset:5px}@media(prefers-reduced-motion:reduce){.ds-round{transition:none}.ds-round:hover{transform:none}}"
+    },
+    {
+      "name": "Recessed navigation",
+      "kind": "nav",
+      "refersTo": "navigation",
+      "description": "Three pill items with a brighter selected surface.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"Main navigation\"><a href=\"#/\" aria-current=\"page\">Atlas</a><button>Data collection</button><button>Methodology</button></nav>",
+      "css": ".ds-nav{display:flex;align-items:center;gap:3px;padding:5px;border-radius:999px;background:#d4eadd06;box-shadow:inset 0 1px 1px #d9eee51b,inset 0 -1px 1px #e9fff509;font:13px Urbanist,sans-serif}.ds-nav a,.ds-nav button{font:inherit;display:flex;align-items:center;justify-content:center;padding:12px 19px;color:#b4c8bd;border:0;border-radius:999px;background:none;text-decoration:none;cursor:pointer;transition:color .2s,background .2s}.ds-nav [aria-current]{background:linear-gradient(135deg,#c9e6d21f,#a6c5b40c);color:#eefcf3;box-shadow:inset 0 1px 1px #d3eddd30,0 4px 9px #0003}.ds-nav a:hover,.ds-nav button:hover{color:var(--ink,#edf3f0);background:#e4f6eb0b}.ds-nav a:focus-visible,.ds-nav button:focus-visible{outline:2px solid var(--green,#8bebaa);outline-offset:5px}@media(prefers-reduced-motion:reduce){.ds-nav a,.ds-nav button{transition:none}}"
+    },
+    {
+      "name": "City search",
+      "kind": "input",
+      "refersTo": "search-input",
+      "description": "The inset field used to filter the city catalog.",
+      "html": "<label class=\"ds-search\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"11\" cy=\"11\" r=\"8\"/><path d=\"m21 21-4.3-4.3\"/></svg><input aria-label=\"Find a city or MSA code\" placeholder=\"Find a city or MSA code\"/></label>",
+      "css": ".ds-search{display:flex;align-items:center;gap:12px;padding:14px 16px;border-radius:12px;background:#afdab90d;box-shadow:inset 0 1px 1px #0003,inset 0 -1px 0 #a7c5b329;color:#bfdcc9}.ds-search input{font:14px Urbanist,sans-serif;background:none;border:0;color:#eef9f1;width:100%;min-width:0;caret-color:var(--green,#8bebaa)}.ds-search input::placeholder{color:#9fbeab}.ds-search input:focus-visible{outline:2px solid var(--green,#8bebaa);outline-offset:5px}"
+    },
+    {
+      "name": "Research status",
+      "kind": "chip",
+      "refersTo": "status-chip",
+      "description": "A contextual status action; the green dot does not mean a validated result.",
+      "html": "<button class=\"ds-status\"><span></span>Research preview<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M7 7h10v10M7 17 17 7\"/></svg></button>",
+      "css": ".ds-status{background:var(--glass,linear-gradient(125deg,#e2f4e91c,#829f8f0a 38%,#111e18c9 85%));box-shadow:var(--rim,inset 0 1px 0 #e4fff043,inset 1px 0 0 #e4fff019,inset 0 -1px 0 #e4fff016),var(--shadow,0 14px 38px #0004);backdrop-filter:blur(24px) saturate(120%);-webkit-backdrop-filter:blur(24px) saturate(120%);border-radius:16px;display:flex;align-items:center;gap:10px;font:12px Urbanist,sans-serif;color:var(--ink,#edf3f0);padding:12px 16px;border:0;border-radius:999px;background:#183021a6;cursor:pointer}.ds-status>span{width:5px;height:5px;border-radius:50%;background:var(--green,#8bebaa)}.ds-status svg{width:14px;height:14px}.ds-status:focus-visible{outline:2px solid var(--green,#8bebaa);outline-offset:5px}"
+    },
+    {
+      "name": "Glass detail panel",
+      "kind": "card",
+      "refersTo": "glass-panel",
+      "description": "A feature detail surface extracted from the city map.",
+      "html": "<article class=\"ds-detail\"><h3>Contextual map feature</h3><p>Research metrics are not yet attached.</p></article>",
+      "css": ".ds-detail{background:var(--glass,linear-gradient(125deg,#e2f4e91c,#829f8f0a 38%,#111e18c9 85%));box-shadow:var(--rim,inset 0 1px 0 #e4fff043,inset 1px 0 0 #e4fff019,inset 0 -1px 0 #e4fff016),var(--shadow,0 14px 38px #0004);backdrop-filter:blur(24px) saturate(120%);-webkit-backdrop-filter:blur(24px) saturate(120%);border-radius:16px;width:260px;padding:24px;color:var(--ink,#edf3f0);background:linear-gradient(125deg,#c2e9cd35,#153a24db);font-family:Urbanist,sans-serif}.ds-detail h3{font-size:18px;font-weight:500;margin:12px 0 8px}.ds-detail p{font-size:13px;line-height:1.6;color:#c0dcc9;margin:0}"
+    },
+    {
+      "name": "City lens rail",
+      "kind": "nav",
+      "refersTo": "layer-rail",
+      "description": "Horizontal lens controls with a brighter active segment.",
+      "html": "<nav class=\"ds-lenses\" aria-label=\"Map layers\"><a href=\"#/city/miami/satellite\">Satellite</a><a href=\"#/city/miami/solar\" aria-current=\"page\">Solar PV</a><a href=\"#/city/miami/buildings\">Buildings</a><a href=\"#/city/miami/vegetation\">Vegetation</a></nav>",
+      "css": ".ds-lenses{background:var(--glass,linear-gradient(125deg,#e2f4e91c,#829f8f0a 38%,#111e18c9 85%));box-shadow:var(--rim,inset 0 1px 0 #e4fff043,inset 1px 0 0 #e4fff019,inset 0 -1px 0 #e4fff016),var(--shadow,0 14px 38px #0004);backdrop-filter:blur(24px) saturate(120%);-webkit-backdrop-filter:blur(24px) saturate(120%);border-radius:16px;display:flex;align-items:center;gap:3px;padding:7px;border-radius:999px;background:linear-gradient(130deg,#d6ecde24,#102519c9 70%);box-shadow:var(--rim,inset 0 1px 0 #e4fff043,inset 1px 0 0 #e4fff019,inset 0 -1px 0 #e4fff016),0 12px 32px #0004}.ds-lenses a{font:14px Urbanist,sans-serif;display:flex;align-items:center;gap:9px;border-radius:999px;padding:14px 18px;color:#c8dfd0;text-decoration:none;white-space:nowrap;transition:background .35s var(--ease,cubic-bezier(.16,1,.3,1)),color .35s}.ds-lenses [aria-current]{background:linear-gradient(135deg,#d4ecdb38,#b6dcc623);color:#f2fff6;box-shadow:inset 0 1px 1px #d8ffe45c,0 5px 12px #0002}.ds-lenses a:hover{color:#effff5;background:#b4d8c51c}.ds-lenses a:focus-visible{outline:2px solid var(--green,#8bebaa);outline-offset:5px}@media(prefers-reduced-motion:reduce){.ds-lenses a{transition:none}}"
+    },
+    {
+      "name": "Satellite switch",
+      "kind": "input",
+      "refersTo": "switch",
+      "description": "Off and on track states for the satellite basemap.",
+      "html": "<button class=\"ds-switch\" role=\"switch\" aria-label=\"Satellite basemap\" aria-checked=\"true\"><span></span></button>",
+      "css": ".ds-switch{width:32px;height:19px;border:0;border-radius:99px;padding:3px;background:#445f4d;cursor:pointer}.ds-switch span{display:block;height:13px;width:13px;background:#e2f5e6;border-radius:50%;transition:transform .25s var(--ease,cubic-bezier(.16,1,.3,1))}.ds-switch[aria-checked=true]{background:#78b38c}.ds-switch[aria-checked=true] span{transform:translateX(13px)}.ds-switch:focus-visible{outline:2px solid var(--green,#8bebaa);outline-offset:5px}@media(prefers-reduced-motion:reduce){.ds-switch span{transition:none}}"
+    },
+    {
+      "name": "Archive file fallback",
+      "kind": "custom",
+      "refersTo": "archive-file",
+      "description": "The selected DOM fallback face; the physical rack is rendered by the application scene.",
+      "html": "<button class=\"ds-file\" aria-label=\"Open New York city archive\"><span class=\"ds-file-front\"><span class=\"ds-file-top\">MSA 35620<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M7 7h10v10M7 17 17 7\"/></svg></span><span class=\"ds-file-image\"><span>NYC</span></span><span class=\"ds-file-city\">New York</span><span class=\"ds-file-meta\">NY · NJ</span><span class=\"ds-file-metric\"><span>Metropolitan population</span><span>20.11<small>million residents</small></span></span></span></button>",
+      "css": ".ds-file{position:relative;width:240px;height:326px;padding:0;border:0;background:none;color:var(--ink,#edf3f0);font-family:Urbanist,sans-serif;text-align:left;cursor:pointer}.ds-file-front{position:absolute;inset:0;display:flex;flex-direction:column;padding:22px;overflow:hidden;border-radius:13px;background:linear-gradient(125deg,#b3faca82,#22a55788 45%,#183f2beb);box-shadow:inset 0 1px 1px #f2fff6b0,inset 1px 0 1px #f0fff46b,8px 16px 32px #0004;backdrop-filter:blur(8px)}.ds-file-top{display:flex;justify-content:space-between;font-size:10px;color:#e5f4e8}.ds-file-top svg{width:17px;height:17px}.ds-file-image{position:relative;display:block;height:130px;margin:20px -22px 16px;overflow:hidden;flex-shrink:0}.ds-file-image span{position:absolute;right:12px;bottom:4px;font-size:50px;color:#e0ffe965}.ds-file-city{font-size:24px;letter-spacing:-.02em}.ds-file-meta{font-size:9px;color:#cae9d3;margin-top:5px}.ds-file-metric{display:flex;justify-content:space-between;margin-top:12px;padding-top:10px;border-top:1px solid #cde9d633;font-size:10px}.ds-file-metric>span:last-child{font-size:18px}.ds-file-metric small{font-size:10px;margin-left:4px}.ds-file:focus-visible{outline:2px solid var(--green,#8bebaa);outline-offset:5px}"
+    }
+  ],
+  "narrative": {
+    "northStar": "A spatial atlas of living cities",
+    "overview": "The ClauseOS-inspired world pairs ink-black green with silver transparent glass, geometric Urbanist lettering and luminous green selection. Geographic imagery remains visible through and around the controls. The Green Transition Atlas identity and English interface carry across the national atlas, city maps and source drawers.\n\nDepth comes from translucent material, fine lit rims and a physical archive rack. Active objects gain color and face the visitor; quiet controls use recessed pills and slender line icons. The interface supports an immersive desktop presentation while keeping labels, research status and keyboard controls explicit.",
+    "keyCharacteristics": [
+      "Ink-green ground, silver text and Harmony Green interaction cues.",
+      "Transparent glass with directional light, soft ambient shadows and fine rims.",
+      "Urbanist throughout, with light display weights and compact operational labels.",
+      "A cyclic archive rack whose selected file turns toward the viewer."
+    ],
+    "rules": [
+      {
+        "name": "The Selection Rule",
+        "body": "Use Harmony Green and the green file material to identify interaction and selection; they do not certify environmental performance.",
+        "section": "colors"
+      },
+      {
+        "name": "The Material Rule",
+        "body": "Retain transparency, lit inset edges and soft shadows together when extending a glass control. The map remains perceptible behind it.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do preserve the ink-green, silver-glass and Harmony Green world chosen from ClauseOS.",
+      "Do retain Urbanist, outlined vector icons, visible keyboard focus and reduced-motion behavior.",
+      "Do keep all 20 metropolitan areas reachable through the map, cyclic archive and searchable catalog.",
+      "Do label population and research values by their actual meaning; retain pending research states.",
+      "Do keep geographic imagery and provider attribution visible in the map experience."
+    ],
+    "donts": [
+      "Don't turn the population ordering or selected green card into an implied green-performance ranking.",
+      "Don't flatten the archive into a generic card grid or remove its drag, loop and front-facing selection behavior.",
+      "Don't replace contextual or illustrative map layers with unsupported claims of measured research results.",
+      "Don't ship the ClauseOS reference imagery as product artwork or hide the map's source attribution."
+    ]
+  }
+}
