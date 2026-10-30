@@ -28,7 +28,7 @@ export default function CityMap({city,lens,opacity,satellite,threeD,command,onIn
  lensRef.current=lens;inspectRef.current=onInspect;
  useEffect(()=>{
   if(!el.current)return;let m:Map;let timer:ReturnType<typeof setTimeout>;let lastSignature='';
-  try{m=new maplibregl.Map({container:el.current,style:mapStyle,center:city.center,zoom:13.7,pitch:0,bearing:-12,attributionControl:{compact:true},maxPitch:65,minZoom:3,maxZoom:19,canvasContextAttributes:{preserveDrawingBuffer:true}})}catch{setError('WebGL is unavailable. Try a browser with hardware acceleration enabled.');return}
+  try{m=new maplibregl.Map({container:el.current,style:mapStyle,center:city.center,zoom:13.7,pitch:0,bearing:0,attributionControl:{compact:true},maxPitch:65,minZoom:3,maxZoom:19,canvasContextAttributes:{preserveDrawingBuffer:true}})}catch{setError('WebGL is unavailable. Try a browser with hardware acceleration enabled.');return}
   map.current=m;setError(null);setReady(false);m.addControl(new maplibregl.ScaleControl({maxWidth:100,unit:'metric'}),'top-right');
   timer=setTimeout(()=>{if(!m.areTilesLoaded())setError('Some map tiles are taking longer to load. Check your connection or retry.')},18000);
   m.on('load',()=>{setReady(true);clearTimeout(timer)});
@@ -56,6 +56,6 @@ export default function CityMap({city,lens,opacity,satellite,threeD,command,onIn
   change('solar-area','fill-opacity',lens==='solar'?alpha:0);change('solar-outline','line-opacity',lens==='solar'?alpha:0);};apply();return()=>{m.off('idle',apply)};
  },[lens,opacity,satellite,ready]);
  useEffect(()=>{const m=map.current;if(!m||!ready)return;const apply=()=>{if(!m.isStyleLoaded()){m.once('idle',apply);return;}const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;m.easeTo({pitch:threeD?52:0,duration:reduce?0:900});m.setPaintProperty('building-data','fill-extrusion-height',threeD?['coalesce',['get','render_height'],12]:0)};apply();return()=>{m.off('idle',apply)}},[threeD,ready]);
- useEffect(()=>{const m=map.current;if(!m||!ready)return;const opts={duration:matchMedia('(prefers-reduced-motion: reduce)').matches?0:650};if(command.action==='in')m.zoomIn(opts);else if(command.action==='out')m.zoomOut(opts);else m.flyTo({center:city.center,zoom:13.7,bearing:-12,...opts})},[command]);
+ useEffect(()=>{const m=map.current;if(!m||!ready)return;const opts={duration:matchMedia('(prefers-reduced-motion: reduce)').matches?0:650};if(command.action==='in')m.zoomIn(opts);else if(command.action==='out')m.zoomOut(opts);else if(command.action==='north')m.easeTo({bearing:0,...opts});else m.flyTo({center:city.center,zoom:13.7,bearing:0,...opts})},[command]);
  return <><div ref={el} className="city-map" aria-label={`${city.name} interactive map`}/>{!ready&&!error&&<div className="map-loading"><span className="loading-dot"/> Opening the urban landscape…</div>}{error&&<div className="map-error" role="alert">{error}<button onClick={()=>setRetry(n=>n+1)}>Retry map</button></div>}</>;
 }
