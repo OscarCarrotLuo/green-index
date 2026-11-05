@@ -1,4 +1,4 @@
-import {useEffect,useState} from 'react';
+import {useEffect,useMemo,useState} from 'react';
 import {geoAlbersUsa} from 'd3-geo';
 import {cities,type City} from './data';
 
@@ -20,11 +20,12 @@ const labels:Record<string,[number,number,'start'|'end']>={
 export default function NationalMap({selected,onSelect,onPreview}:{selected:number;onSelect:(city:City)=>void;onPreview?:(index:number|null)=>void}){
   const [map,setMap]=useState<{dots:[number,number,number][];borders:string}|null>(null);
   const [error,setError]=useState(false);
+  const base=useMemo(()=>map&&<><path d={map.borders} className="state-borders"/>{map.dots.map(([x,y,r],i)=><circle key={i} cx={x} cy={y} r={r} fill="url(#map-light)" opacity={.45+((i*17)%50)/100}/>)}</>,[map]);
   useEffect(()=>{const controller=new AbortController();fetch(`${import.meta.env.BASE_URL}data/national-map.json`,{signal:controller.signal}).then(r=>{if(!r.ok)throw Error();return r.json()}).then(setMap).catch(e=>{if(e.name!=='AbortError')setError(true)});return()=>controller.abort()},[]);
   return <svg className="usa-map top20-map" viewBox="0 0 1000 530" aria-label="The 20 largest U.S. metropolitan areas by 2025 population. Select a city to open its archive.">
-    <defs><radialGradient id="map-light"><stop stopColor="#bad4b7"/><stop offset="1" stopColor="#536b5a"/></radialGradient></defs>
+    <defs><radialGradient id="map-light"><stop stopColor="#c6ccd3"/><stop offset="1" stopColor="#60656b"/></radialGradient></defs>
 
-    {map?<><path d={map.borders} className="state-borders"/>{map.dots.map(([x,y,r],i)=><circle key={i} cx={x} cy={y} r={r} fill="url(#map-light)" opacity={.45+((i*17)%50)/100}/>)}</>:<text x="500" y="280" textAnchor="middle" fill="#b4c5b9">{error?'Map unavailable — choose a city below.':'Drawing the atlas…'}</text>}
+    {base||<text x="500" y="280" textAnchor="middle" fill="#bbc0c8">{error?'Map unavailable — choose a city below.':'Drawing the atlas…'}</text>}
     {cities.map((city,i)=>{
       const [x,y]=projection(city.center)!;
       const [lx,ly,anchor]=labels[city.id];

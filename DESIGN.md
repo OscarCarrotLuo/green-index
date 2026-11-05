@@ -1,12 +1,14 @@
 ---
 name: "Green Transition Atlas"
-description: "An immersive metropolitan atlas in dark green, silver glass and living geographic imagery."
+description: "An immersive metropolitan atlas in blue charcoal, silver glass and Harmony Green selection over living geographic imagery."
 colors:
   harmony-green: "#8bebaa"
-  ink-green: "#090f0e"
-  silver-ink: "#edf3f0"
-  muted-sage: "#a9bdb3"
-  fine-line: "#d5f2e21c"
+  blue-charcoal: "#080e16"
+  silver-ink: "#ecf2fa"
+  muted-silver: "#b2b8bf"
+  fine-line: "#e4eaf21c"
+  dossier-green: "#1f6235"
+  pill-ink: "#0b2416"
   action-mint: "#bce4c5"
   action-ink: "#173720"
   round-action-mint: "#bfeacc"
@@ -18,7 +20,7 @@ colors:
 typography:
   display:
     fontFamily: "Urbanist, sans-serif"
-    fontSize: "clamp(54px, 5.3vw, 82px)"
+    fontSize: "clamp(56px, 5vw, 72px)"
     fontWeight: 430
     lineHeight: 1.02
     letterSpacing: "-.04em"
@@ -30,18 +32,18 @@ typography:
     letterSpacing: "-.035em"
   headline:
     fontFamily: "Urbanist, sans-serif"
-    fontSize: "31px"
+    fontSize: "40px"
     fontWeight: 450
     lineHeight: 1.2
     letterSpacing: "-.025em"
   title:
     fontFamily: "Urbanist, sans-serif"
-    fontSize: "23px"
+    fontSize: "24px"
     fontWeight: 450
     letterSpacing: "-.025em"
   body:
     fontFamily: "Urbanist, sans-serif"
-    fontSize: "15px"
+    fontSize: "16px"
     fontWeight: 400
     lineHeight: 1.7
   reading:
@@ -51,11 +53,15 @@ typography:
     lineHeight: 1.8
   label:
     fontFamily: "Urbanist, sans-serif"
-    fontSize: "13px"
+    fontSize: "14px"
+    fontWeight: 400
+  fine:
+    fontFamily: "Urbanist, sans-serif"
+    fontSize: "12px"
     fontWeight: 400
   metric:
     fontFamily: "Urbanist, sans-serif"
-    fontSize: "38px"
+    fontSize: "40px"
     fontWeight: 400
     lineHeight: 1.1
 rounded:
@@ -124,24 +130,25 @@ components:
 
 **Creative North Star: "A spatial atlas of living cities"**
 
-The ClauseOS-inspired world pairs ink-black green with silver transparent glass, geometric Urbanist lettering and luminous green selection. Geographic imagery remains visible through and around the controls. The Green Transition Atlas identity and English interface carry across the national atlas, city maps and source drawers.
+The ClauseOS-inspired world pairs a blue-charcoal ground with silver transparent glass, geometric Urbanist lettering and luminous green selection. Geographic imagery remains visible through and around the controls. The Green Transition Atlas identity and English interface carry across the national atlas, city maps and source drawers.
 
 Depth comes from translucent material, fine lit rims and a physical archive rack. Active objects gain color and face the visitor; quiet controls use recessed pills and slender line icons. The interface supports an immersive desktop presentation while keeping labels, research status and keyboard controls explicit.
 
 **Key Characteristics:**
 
-- Ink-green ground, silver text and Harmony Green interaction cues.
+- Blue-charcoal ground, silver text and Harmony Green interaction cues; one large saturated green surface per screen.
 - Transparent glass with directional light, soft ambient shadows and fine rims.
 - Urbanist throughout, with light display weights and compact operational labels.
 - A cyclic archive rack whose selected file turns toward the viewer.
 
 ## Colors
 
-The palette combines a near-black green ground, cool silver text and pale green light. The frontmatter records the implemented color values; the descriptions below explain their roles.
+The palette combines a near-black blue-charcoal ground, cool silver text and pale green light. Neutrals carry no green cast, so green reads as signal. The frontmatter records the implemented color values; the descriptions below explain their roles.
 
 ### Primary
 
-- **Harmony Green** marks keyboard focus, status dots and active interaction cues.
+- **Harmony Green** marks keyboard focus, the selected ruler tick and pill, map markers and active interaction cues.
+- **Dossier Green** is the one large saturated surface on the archive screen: the selected city's dossier, with white text at AA contrast or better.
 - **Action Mint / Action Ink** form the filled catalog-download action. The round map-entry action uses its own paired mint and dark-green tokens.
 
 ### Secondary
@@ -154,25 +161,27 @@ These semantic colors appear in layer icons, legends and geographic context. The
 
 ### Neutral
 
-- **Ink Green** is the page background.
+- **Blue Charcoal** is the page background.
 - **Silver Ink** is the main interface text.
-- **Muted Sage** supports body copy and secondary information.
+- **Muted Silver** supports body copy and secondary information.
 - **Fine Line** is the translucent divider color.
 - **Satellite** is the neutral accent for the satellite lens.
 
-**The Selection Rule.** Use Harmony Green and the green file material to identify interaction and selection; they do not certify environmental performance.
+**The Selection Rule.** Use Harmony Green and the green file material to identify interaction and selection; they do not certify environmental performance. Data availability uses shape instead: a hollow ring is pending, a filled dot is attached data.
 
 ## Typography
 
 **Display and body font:** Urbanist, with a sans-serif fallback. The local variable font supplies weights from 100 through 900 and uses swap loading.
 
-Large headings use light intermediate weights and tight tracking. Operational text stays compact and sentence case. The frontmatter's display, city-display, headline, title, body, reading, label and metric roles preserve the actual hierarchy; they are distinct roles rather than a fabricated modular scale.
+Large headings use light intermediate weights and tight tracking. Operational text stays compact and sentence case. Sizes come from one six-step scale, exposed as `--fs-xs` through `--fs-2xl`: 12 / 14 / 16 / 24 / 40 / 72px. Metadata and labels use 14px on desktop; 12px is reserved for attribution, the brand sub-label, tooltips and chart axis labels, and is the floor in narrow fallbacks. Display headings scale fluidly up to 72px.
 
-The atlas display emphasizes its final word with pale green. City titles are separate from the longer MSA name beneath them. Drawers use a larger reading heading (42px, weight 450, line height 1.08); supporting paragraphs use the reading role. Metric values use tabular numbers; units remain adjacent in smaller text. The archive's WebGL texture also uses Urbanist and reduces long city names to fit the card.
+The atlas display emphasizes its final word with pale green. City titles are separate from the longer MSA name beneath them. Drawers use the 40px headline (weight 450, line height 1.08); supporting paragraphs use the reading role. Introductory paragraphs use two-tone emphasis: muted text with key phrases in Silver Ink at the same weight. Metric values use tabular numbers; units remain adjacent in smaller text. The archive's WebGL texture also uses Urbanist, sized so the selected file renders at roughly 12 / 14 / 24 / 40px, and reduces long city names to fit the card.
 
 ## Layout
 
 Desktop is the commissioned device class; dedicated mobile design is deferred. The implementation includes a readable narrow-screen fallback without establishing a separate mobile design language.
+
+On desktop screens at least 761px wide and 640px tall, the atlas home is three snapped sections (atlas, archive, index), each filling the viewport below a sticky header (104px; 88px up to 1000px). Snapping is mandatory with `scroll-snap-stop: always`, so one gesture moves one section. The archive deck and the index chart scale with viewport height so each section fits; narrower or shorter screens scroll freely.
 
 A shared fluid page gutter aligns the header, atlas, archive dossier and city controls. The primary content limit is 1680px; the header has a 1800px limit. At wide desktop sizes the atlas uses a 30% / 70% text-to-map grid, and the archive spans the content width. The geographic map and archive are large surfaces with room around their controls.
 
@@ -214,17 +223,21 @@ City search is an inset translucent field with a line icon, muted placeholder an
 
 ### Status, locator and insight surfaces
 
-Research status is a quiet glass pill with a green dot and an explicit label. The locator pairs city identity with an entry action. The lower insight panel groups the current lens, metric and study scope with thin vertical rules. Missing metrics remain an em dash accompanied by explanatory status text; color or elevation does not imply validation.
+Research status is a quiet glass pill with a status ring and an explicit label. The locator pairs city identity with an entry action. The lower insight panel groups the current lens, metric and study scope with thin vertical rules. Missing metrics remain an em dash accompanied by explanatory status text; color or elevation does not imply validation.
 
 ### Cyclic city archive
 
-The selected plate displays the city, region, MSA code and metropolitan population. Both WebGL and DOM fallback presentations use the same population label and unit. All 20 cities remain in the continuous cyclic selection model. Dragging and horizontal wheel motion scrub the rack; release settles it. Left and right arrow keys move selection, Enter opens the selected city, and the bead rail supplies named direct selections.
+The selected plate displays the city, region, MSA code and metropolitan population. Both WebGL and DOM fallback presentations use the same population label and unit. All 20 cities remain in the continuous cyclic selection model. Dragging and horizontal wheel motion scrub the rack; release settles it. The rack is ordered by Census region (Northeast, Midwest, South, West) and by population rank within each region, so its order never reads as a performance ranking. Left and right arrow keys move selection, Enter opens the selected city, and the region ruler supplies named direct selections.
 
-The bead for the active city expands into a short green capsule; other beads remain small. Tooltips appear on hover or keyboard focus. The dossier below follows the same selected city and exposes its three lenses. The sidecar's archive specimen records the DOM fallback face; the full 3D composition and exponential settling remain in the application scene.
+The region ruler is a single row of ticks, one per city, with a wider gap between regions and no labels at rest. It is a slider: drag along it, click a tick, or use the arrow, Home and End keys. The selected city rides above its tick in a Harmony Green pill with a short drop line; other city names appear on hover. The dossier below is a saturated green surface that follows the same selected city and exposes its three lenses. The sidecar's archive specimen records the DOM fallback face; the full 3D composition and exponential settling remain in the application scene.
+
+### City index chart
+
+The index section pairs its heading and status with a single-series column chart on a glass surface: neutral silver columns at most 24px wide, 4px rounded caps, square at the baseline, recessive gridlines at 0/25/50/75/100. Columns are buttons that open their city; hover or focus shows the city and value. Columns appear only for validated scores within one common reference. Until then the chart shows a hatched schematic silhouette that is not attached to any city, labelled "Illustrative layout · no scores yet".
 
 ### Reading drawers
 
-Source and methodology content use the same glass material, with a stronger dark-green gradient for sustained reading. The drawer traps focus, closes with Escape and restores the prior focus. Its heading begins directly with content. Search rows, research statuses and the catalog action retain the shared text and icon vocabulary.
+Source and methodology content use the same glass material, with a stronger charcoal gradient for sustained reading. The drawer traps focus, closes with Escape and restores the prior focus. Its heading begins directly with content. Search rows, research statuses and the catalog action retain the shared text and icon vocabulary.
 
 ### Geographic imagery
 
@@ -234,7 +247,7 @@ National geography is drawn from vector dots, state borders and anchored city ca
 
 ### Do:
 
-- Do preserve the ink-green, silver-glass and Harmony Green world chosen from ClauseOS.
+- Do preserve the blue-charcoal, silver-glass and Harmony Green world chosen from ClauseOS.
 - Do retain Urbanist, outlined vector icons, visible keyboard focus and reduced-motion behavior.
 - Do keep all 20 metropolitan areas reachable through the map, cyclic archive and searchable catalog.
 - Do label population and research values by their actual meaning; retain pending research states.

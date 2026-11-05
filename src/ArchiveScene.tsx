@@ -2,11 +2,12 @@ import {useEffect,useMemo,useRef} from 'react';
 import {Canvas,useFrame,useThree} from '@react-three/fiber';
 import {Environment,Lightformer} from '@react-three/drei';
 import * as THREE from 'three';
-import {cities,satelliteThumbnail,type City} from './data';
+import {satelliteThumbnail,type City} from './data';
+import {rack} from './regions';
 
-const FILES=cities.length,WIDTH=2.12,HEIGHT=2.9;
+const FILES=rack.length,WIDTH=2.12,HEIGHT=2.9;
 const wrap=(value:number)=>THREE.MathUtils.euclideanModulo(value+FILES/2,FILES)-FILES/2;
-type Props={selected:number;dragPosition:number;dragging:boolean;score:string;metricLabel?:string;metricUnit?:string;activeHeader?:string;onChoose:(index:number)=>void;onReady:()=>void};
+type Props={selected:number;dragPosition:number;dragging:boolean;scoreOf:(city:City)=>string;metricLabel?:string;metricUnit?:string;activeHeader?:string;onChoose:(index:number)=>void;onReady:()=>void};
 
 // One physical rack, viewed through one camera. The side files keep a shared
 // lean; the chosen file leaves the rack and turns to face the viewer.
@@ -26,67 +27,67 @@ function drawFile(city:City,active:boolean,score:string,image?:HTMLImageElement,
   c.beginPath();c.roundRect(3,3,762,1044,39);c.clip();
   const glass=c.createLinearGradient(0,0,768,1050);
   if(active){glass.addColorStop(0,'rgba(206,255,221,.76)');glass.addColorStop(.35,'rgba(64,186,100,.72)');glass.addColorStop(1,'rgba(17,75,44,.93)')}
-  else{glass.addColorStop(0,'rgba(226,239,233,.42)');glass.addColorStop(.3,'rgba(206,225,217,.15)');glass.addColorStop(.72,'rgba(210,231,220,.10)');glass.addColorStop(1,'rgba(229,245,236,.30)')}
+  else{glass.addColorStop(0,'rgba(230,236,243,.42)');glass.addColorStop(.3,'rgba(210,219,230,.15)');glass.addColorStop(.72,'rgba(214,223,233,.10)');glass.addColorStop(1,'rgba(234,240,247,.30)')}
   c.fillStyle=glass;c.fillRect(0,0,768,1050);
   const shine=c.createLinearGradient(0,0,768,380);
   shine.addColorStop(0,'rgba(255,255,255,.28)');shine.addColorStop(.32,'rgba(255,255,255,0)');shine.addColorStop(.72,'rgba(255,255,255,.03)');shine.addColorStop(1,'rgba(255,255,255,.17)');
   c.fillStyle=shine;c.fillRect(0,0,768,1050);
-  c.strokeStyle=active?'rgba(228,255,231,.92)':'rgba(244,255,248,.75)';c.lineWidth=4;
+  c.strokeStyle=active?'rgba(228,255,231,.92)':'rgba(246,249,255,.75)';c.lineWidth=4;
   c.beginPath();c.roundRect(6,6,756,1038,37);c.stroke();
-  c.strokeStyle='rgba(245,255,248,.22)';c.lineWidth=1.5;c.beginPath();c.roundRect(17,17,734,1016,31);c.stroke();
-  c.fillStyle=active?'#123e27':'#edf4ef';c.font='500 31px Urbanist, sans-serif';c.fillText(active&&activeHeader?activeHeader:`MSA ${city.msaCode}`,62,89);
+  c.strokeStyle=active?'rgba(245,255,248,.22)':'rgba(246,249,255,.22)';c.lineWidth=1.5;c.beginPath();c.roundRect(17,17,734,1016,31);c.stroke();
+  c.fillStyle=active?'#123e27':'#eef2f7';c.font='500 35px Urbanist, sans-serif';c.fillText(active&&activeHeader?activeHeader:`MSA ${city.msaCode}`,62,89);
   // Draw the launch icon in the same stroke vocabulary as the DOM controls.
   c.strokeStyle=c.fillStyle;c.lineWidth=5;c.beginPath();c.moveTo(666,69);c.lineTo(701,69);c.lineTo(701,104);c.moveTo(701,69);c.lineTo(663,107);c.stroke();
   if(image){
     c.save();c.globalAlpha=active?.48:.22;c.filter=active?'grayscale(0.7) contrast(1.1)':'grayscale(1) brightness(1.7)';
     c.drawImage(image,0,170,768,390);c.restore();
   }
-  c.save();c.strokeStyle=active?'rgba(219,255,223,.3)':'rgba(237,255,242,.18)';c.lineWidth=2;
+  c.save();c.strokeStyle=active?'rgba(219,255,223,.3)':'rgba(240,245,252,.18)';c.lineWidth=2;
   c.beginPath();c.arc(384,355,62,0,Math.PI*2);c.moveTo(384,270);c.lineTo(384,440);c.moveTo(299,355);c.lineTo(469,355);c.stroke();c.restore();
-  c.fillStyle=active?'rgba(235,255,231,.72)':'rgba(243,255,245,.24)';c.font='500 104px Urbanist, sans-serif';c.textAlign='right';c.fillText(city.short,708,535);c.textAlign='left';
-  c.fillStyle=active?'#f1ffea':'rgba(240,246,241,.8)';let fontSize=64;c.font=`400 ${fontSize}px Urbanist, sans-serif`;while(c.measureText(city.name).width>648&&fontSize>32){fontSize-=2;c.font=`400 ${fontSize}px Urbanist, sans-serif`}c.fillText(city.name,60,active?660:925);
-  c.fillStyle=active?'#c6e9bd':'rgba(211,223,213,.65)';c.font='400 29px Urbanist, sans-serif';c.fillText(city.region,62,active?711:977);
+  c.fillStyle=active?'rgba(235,255,231,.72)':'rgba(244,247,252,.24)';c.font='500 118px Urbanist, sans-serif';c.textAlign='right';c.fillText(city.short,708,535);c.textAlign='left';
+  c.fillStyle=active?'#f1ffea':'rgba(241,244,249,.8)';let fontSize=70;c.font=`400 ${fontSize}px Urbanist, sans-serif`;while(c.measureText(city.name).width>648&&fontSize>32){fontSize-=2;c.font=`400 ${fontSize}px Urbanist, sans-serif`}c.fillText(city.name,60,active?660:925);
+  c.fillStyle=active?'#c6e9bd':'rgba(214,221,231,.65)';c.font='400 41px Urbanist, sans-serif';c.fillText(city.region,62,active?718:985);
   if(!active)return canvas;
   c.strokeStyle='rgba(230,255,232,.24)';c.lineWidth=2;c.beginPath();c.moveTo(62,785);c.lineTo(706,785);c.stroke();
-  c.fillStyle=active?'#d1ecc7':'#d7e2d9';c.font='400 31px Urbanist, sans-serif';c.fillText(metricLabel,62,845);
-  c.fillStyle=active?'#efffe8':'#edf5ee';c.font='400 68px Urbanist, sans-serif';c.fillText(active?score:'—',62,948);
+  c.fillStyle=active?'#d1ecc7':'#d7e2d9';c.font='400 41px Urbanist, sans-serif';c.fillText(metricLabel,62,845);
+  c.fillStyle=active?'#efffe8':'#edf5ee';c.font='400 70px Urbanist, sans-serif';c.fillText(active?score:'—',62,948);
   const scoreWidth=c.measureText(score).width;
-  c.font='400 29px Urbanist, sans-serif';c.fillStyle=active?'#c6e9bd':'#c9d8cd';c.fillText(metricUnit,78+scoreWidth,944);
+  c.font='400 41px Urbanist, sans-serif';c.fillStyle='#c6e9bd';c.fillText(metricUnit,78+scoreWidth,944);
   return canvas;
 }
 
-function useFileTextures(score:string,metricLabel?:string,metricUnit?:string,activeHeader?:string){
+function useFileTextures(scoreOf:(city:City)=>string,metricLabel?:string,metricUnit?:string,activeHeader?:string){
   const invalidate=useThree(s=>s.invalidate);
   const images=useRef<(HTMLImageElement|undefined)[]>([]);
-  const textures=useMemo(()=>cities.map(city=>[false,true].map(active=>{
-    const texture=new THREE.CanvasTexture(drawFile(city,active,score,undefined,metricLabel,metricUnit,activeHeader));
+  const textures=useMemo(()=>rack.map(city=>[false,true].map(active=>{
+    const texture=new THREE.CanvasTexture(drawFile(city,active,scoreOf(city),undefined,metricLabel,metricUnit,activeHeader));
     texture.colorSpace=THREE.SRGBColorSpace;texture.anisotropy=4;return texture;
   })),[]);
   useEffect(()=>{
     let alive=true;
     const redraw=(only?:number)=>{
       if(!alive)return;
-      cities.forEach((city,i)=>{if(only!==undefined&&i!==only)return;textures[i].forEach((texture,j)=>{
-        texture.image=drawFile(city,!!j,score,images.current[i],metricLabel,metricUnit,activeHeader);texture.needsUpdate=true;
+      rack.forEach((city,i)=>{if(only!==undefined&&i!==only)return;textures[i].forEach((texture,j)=>{
+        texture.image=drawFile(city,!!j,scoreOf(city),images.current[i],metricLabel,metricUnit,activeHeader);texture.needsUpdate=true;
       })});invalidate();
     };
     redraw();document.fonts.ready.then(()=>redraw());
-    cities.forEach((city,i)=>{
+    rack.forEach((city,i)=>{
       if(images.current[i])return;
       const image=new Image();image.crossOrigin='anonymous';image.onload=()=>{if(alive){images.current[i]=image;redraw(i)}};
       image.src=satelliteThumbnail(city);
     });
     return()=>{alive=false};
-  },[score,metricLabel,metricUnit,activeHeader,textures,invalidate]);
+  },[scoreOf,metricLabel,metricUnit,activeHeader,textures,invalidate]);
   useEffect(()=>()=>textures.flat().forEach(t=>t.dispose()),[textures]);
   return textures;
 }
 
-function Rack({selected,dragPosition,dragging,score,metricLabel,metricUnit,activeHeader,onChoose,onReady}:Props){
+function Rack({selected,dragPosition,dragging,scoreOf,metricLabel,metricUnit,activeHeader,onChoose,onReady}:Props){
   const {camera,size,invalidate,gl}=useThree();
   const files=useRef<(THREE.Group|null)[]>([]),faces=useRef<(THREE.MeshBasicMaterial|null)[]>([]);
   const progress=useRef(selected),reduced=useRef(false);
-  const textures=useFileTextures(score,metricLabel,metricUnit,activeHeader);
+  const textures=useFileTextures(scoreOf,metricLabel,metricUnit,activeHeader);
   const geometry=useMemo(()=>{
     const shape=makeOutline();
     const body=new THREE.ExtrudeGeometry(shape,{depth:.045,bevelEnabled:true,bevelSize:.007,bevelThickness:.007,bevelSegments:1,steps:1,curveSegments:12});
@@ -134,21 +135,21 @@ function Rack({selected,dragPosition,dragging,score,metricLabel,metricUnit,activ
   return <>
     <ambientLight intensity={.8}/><directionalLight position={[-4,8,6]} intensity={2}/>
     <Environment resolution={128} frames={1}>
-      <Lightformer form="rect" intensity={3} color="#effff1" position={[-4,4,3]} scale={[4,9,1]} rotation-y={Math.PI/4}/>
+      <Lightformer form="rect" intensity={3} color="#f3f6fb" position={[-4,4,3]} scale={[4,9,1]} rotation-y={Math.PI/4}/>
       <Lightformer form="rect" intensity={2} position={[5,1,4]} scale={[2,7,1]} rotation-y={-Math.PI/4}/>
     </Environment>
     {Array.from({length:FILES},(_,i)=><group key={i} ref={el=>{files.current[i]=el}} onClick={e=>{e.stopPropagation();if(e.delta<6)onChoose(i)}} onPointerOver={e=>{e.stopPropagation();gl.domElement.style.cursor='pointer'}} onPointerOut={()=>{gl.domElement.style.cursor='grab'}}>
       <mesh geometry={geometry.body}>
-        <meshPhysicalMaterial color="#d3e6da" transparent opacity={.1} roughness={.18} metalness={.05} clearcoat={1} clearcoatRoughness={.1} depthWrite={false}/>
+        <meshPhysicalMaterial color="#d6dee8" transparent opacity={.1} roughness={.18} metalness={.05} clearcoat={1} clearcoatRoughness={.1} depthWrite={false}/>
       </mesh>
       <mesh geometry={geometry.face} position-z={.034}>
         <meshBasicMaterial ref={el=>{faces.current[i]=el}} map={textures[i][0]} transparent depthWrite={false} side={THREE.DoubleSide} toneMapped={false}/>
       </mesh>
-      <lineLoop geometry={geometry.line}><lineBasicMaterial color="#e6fff0" transparent opacity={.44} depthWrite={false}/></lineLoop>
+      <lineLoop geometry={geometry.line}><lineBasicMaterial color="#eef3fa" transparent opacity={.44} depthWrite={false}/></lineLoop>
     </group>)}
   </>;
 }
 
 export default function ArchiveScene(props:Props){
-  return <Canvas orthographic camera={{position:[0,4.6,12],near:.1,far:60,zoom:90}} dpr={[1,1.5]} frameloop="demand" gl={{alpha:true,antialias:true,powerPreference:'low-power'}}><Rack {...props}/></Canvas>;
+  return <Canvas orthographic camera={{position:[0,4.6,12],near:.1,far:60,zoom:90}} dpr={[1,1.5]} frameloop="demand" resize={{scroll:false}} gl={{alpha:true,antialias:true,powerPreference:'low-power'}}><Rack {...props}/></Canvas>;
 }

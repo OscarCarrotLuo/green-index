@@ -9,10 +9,10 @@ const mapStyle:StyleSpecification={version:8,glyphs:'https://tiles.openfreemap.o
  context:{type:'vector',url:'https://tiles.openfreemap.org/planet',attribution:'<a href="https://openfreemap.org/">OpenFreeMap</a> © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'},
  solar:{type:'geojson',data:EMPTY}
 },layers:[
- {id:'background',type:'background',paint:{'background-color':'#101c1b'}},
- {id:'land',type:'fill',source:'context','source-layer':'landcover',paint:{'fill-color':'#20302a','fill-opacity':.7}},
- {id:'water',type:'fill',source:'context','source-layer':'water',paint:{'fill-color':'#0b171b'}},
- {id:'roads',type:'line',source:'context','source-layer':'transportation',paint:{'line-color':'#53615a','line-width':.75,'line-opacity':.45}},
+ {id:'background',type:'background',paint:{'background-color':'#131a23'}},
+ {id:'land',type:'fill',source:'context','source-layer':'landcover',paint:{'fill-color':'#252d36','fill-opacity':.7}},
+ {id:'water',type:'fill',source:'context','source-layer':'water',paint:{'fill-color':'#0f151e'}},
+ {id:'roads',type:'line',source:'context','source-layer':'transportation',paint:{'line-color':'#595e64','line-width':.75,'line-opacity':.45}},
  {id:'satellite',type:'raster',source:'satellite',paint:{'raster-opacity':.82,'raster-saturation':-.24,'raster-contrast':.12,'raster-fade-duration':500}},
  {id:'building-context',type:'fill',source:'context','source-layer':'building',minzoom:11,paint:{'fill-color':'#adbbd4','fill-opacity':.01}},
  {id:'green-cover',type:'fill',source:'context','source-layer':'landcover',filter:['match',['get','class'],['wood','grass'],true,false],paint:{'fill-color':['match',['get','class'],'wood','#73bf86','#c8db8b'],'fill-opacity':0}},
@@ -21,7 +21,7 @@ const mapStyle:StyleSpecification={version:8,glyphs:'https://tiles.openfreemap.o
  {id:'building-outline',type:'line',source:'context','source-layer':'building',minzoom:12,paint:{'line-color':'#e0e5f2','line-width':.55,'line-opacity':0}},
  {id:'solar-area',type:'fill',source:'solar',paint:{'fill-color':'#f4ca73','fill-opacity':0}},
  {id:'solar-outline',type:'line',source:'solar',paint:{'line-color':'#ffe3a8','line-width':1,'line-opacity':0}},
- {id:'place-labels',type:'symbol',source:'context','source-layer':'place',minzoom:9,filter:['match',['get','class'],['suburb','neighbourhood','quarter'],true,false],layout:{'text-field':['coalesce',['get','name:en'],['get','name']],'text-font':['Noto Sans Regular'],'text-size':11,'text-letter-spacing':.1,'text-transform':'uppercase','text-max-width':12},paint:{'text-color':'#dce4dc','text-halo-color':'#17241d','text-halo-width':1.5,'text-opacity':.78}}
+ {id:'place-labels',type:'symbol',source:'context','source-layer':'place',minzoom:9,filter:['match',['get','class'],['suburb','neighbourhood','quarter'],true,false],layout:{'text-field':['coalesce',['get','name:en'],['get','name']],'text-font':['Noto Sans Regular'],'text-size':12,'text-letter-spacing':.1,'text-transform':'uppercase','text-max-width':12},paint:{'text-color':'#dce2ea','text-halo-color':'#1a212a','text-halo-width':1.5,'text-opacity':.78}}
 ]};
 export default function CityMap({city,lens,opacity,satellite,threeD,command,onInspect}:{city:City;lens:Lens;opacity:number;satellite:boolean;threeD:boolean;command:{id:number;action:string};onInspect:(text:string)=>void}){
  const el=useRef<HTMLDivElement>(null),map=useRef<Map|null>(null),lensRef=useRef(lens),inspectRef=useRef(onInspect);const [ready,setReady]=useState(false),[error,setError]=useState<string|null>(null),[retry,setRetry]=useState(0);

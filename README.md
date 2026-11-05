@@ -18,7 +18,9 @@ Population order is not a green-performance ranking. Map centers are navigation 
 The spatial archive and optical-glass interface are inspired by [Rondesignlab’s ClauseOS case study](https://rondesignlab.com/cases/clause-os-compliance-management-saas). No ClauseOS artwork or product claims are embedded. The interface is independently implemented for this atlas.
 
 - Drag horizontally or use a trackpad to scrub the cyclic archive; release to settle into a city.
-- Arrow keys select a city; Enter opens the selected archive. The twenty indicators also select directly.
+- The home page snaps between three full-screen sections: atlas, archive and index.
+- The archive is grouped by Census region, then by population rank. Arrow keys select a city; Enter opens the selected archive. Drag along the ruler below the archive, click a tick, or use its arrow keys to select any city.
+- The index section shows a placeholder column chart until validated, comparable scores are connected; it is labelled as illustrative and tied to no city.
 - Dossier links open the selected city in Solar PV, Buildings, or Vegetation.
 - The map’s appearance button exposes opacity and satellite visibility; the north arrow resets bearing.
 - Reduced-motion preferences disable page transitions and snap the archive to its selected state.
