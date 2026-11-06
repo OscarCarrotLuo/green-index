@@ -1,0 +1,12 @@
+{
+  "minzoom": 10,
+  "maxzoom": 15,
+  "bounds": [
+    -75.28285869699164,
+    39.866047965712305,
+    -74.95529830814952,
+    40.138558127925286
+  ],
+  "tiles": 1445,
+  "display": "Nearest-neighbor web display of the 1 m prediction; zoom 15 tiles are coarser than the analysis grid"
+}

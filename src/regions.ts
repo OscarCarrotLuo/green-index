@@ -19,4 +19,3 @@ const slots=cities.map(city=>rack.indexOf(city));
 export const rackSlot=(cityIndex:number)=>slots[cityIndex];
 /** `cities` index of an archive rack position; wraps around the rack. */
 export const cityAtSlot=(slot:number)=>cities.indexOf(rack[((slot%rack.length)+rack.length)%rack.length]);
-export const rackRegions=regionOrder.map(name=>({name,cities:rack.filter(city=>censusRegion(city)===name)}));

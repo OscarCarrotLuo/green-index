@@ -1,7 +1,7 @@
 import {Component,Suspense,lazy,memo,useCallback,useEffect,useRef,useState,type ReactNode,type Dispatch,type SetStateAction,type CSSProperties} from 'react';
 import {ArrowUpRight,Layers3,Sun,Building2,Leaf,FolderOpen} from 'lucide-react';
 import {cities,satelliteThumbnail,type City} from './data';
-import {rack,rackRegions,rackSlot,cityAtSlot,censusRegion} from './regions';
+import {rack,rackSlot,cityAtSlot,censusRegion} from './regions';
 const count=cities.length;
 const populationScore=(city:City)=>(city.population/1e6).toFixed(2);
 const ArchiveScene=lazy(()=>import('./ArchiveScene'));
@@ -19,7 +19,7 @@ export default memo(function CityArchive({selected,setSelected,onSelect,onCatalo
   const sceneDidLoad=useCallback(()=>setSceneReady(true),[]);
   const sceneFailed=useCallback(()=>setSceneReady(false),[]);
   useEffect(()=>{
-    const query=matchMedia('(min-width:761px)');
+    const query=matchMedia('(min-width:761px), (min-width:560px) and (hover:hover) and (pointer:fine)');
     const update=()=>{setDesktop(query.matches);if(!query.matches)setSceneReady(false)};
     update();query.addEventListener('change',update);return()=>query.removeEventListener('change',update);
   },[]);
@@ -90,23 +90,23 @@ export default memo(function CityArchive({selected,setSelected,onSelect,onCatalo
         </button>;
       })}</div>
     </div>
-    <div className="archive-footer"><RegionRuler selected={selected} onPick={setSelected}/></div>
+    <div className="archive-footer"><ArchiveRuler selected={selected} onPick={setSelected}/></div>
     <div className="archive-dossier glass"><div className="dossier-city" key={city.id}><span className="dossier-code">{city.short}</span><div><h3>{city.name}</h3><p>{city.region} · MSA {city.msaCode}</p></div></div><div className="dossier-lenses"><a href={`#/city/${city.id}/solar`}><Sun size={20}/><span>Solar PV<small>Energy from above</small></span><ArrowUpRight size={15}/></a><a href={`#/city/${city.id}/buildings`}><Building2 size={20}/><span>Buildings<small>The places we shape</small></span><ArrowUpRight size={15}/></a><a href={`#/city/${city.id}/vegetation`}><Leaf size={20}/><span>Vegetation<small>Room for nature</small></span><ArrowUpRight size={15}/></a></div><button className="dossier-open" onClick={()=>onSelect(city)} aria-label={`Explore ${city.name} map`}><ArrowUpRight size={23}/></button></div>
   </section>;
 });
-// One tick per city, with a wider gap between regions. Drag along the ruler,
+// One evenly spaced tick per city, in archive order. Drag along the ruler,
 // click a tick or use the arrow keys; the selected city rides above in a pill.
-function RegionRuler({selected,onPick}:{selected:number;onPick:(index:number)=>void}){
+function ArchiveRuler({selected,onPick}:{selected:number;onPick:(index:number)=>void}){
   const ruler=useRef<HTMLDivElement>(null),[scrubbing,setScrubbing]=useState(false);
-  const city=cities[selected],slot=rackSlot(selected),group=rackRegions.findIndex(region=>region.cities.includes(city));
-  const x=`calc(${slot} * var(--tick) + ${group} * var(--region-gap) + var(--tick) / 2)`;
+  const city=cities[selected],slot=rackSlot(selected);
+  const x=`calc(${slot} * var(--tick) + var(--tick) / 2)`;
   const pick=(clientX:number)=>{
     let nearest=selected,distance=Infinity;
     ruler.current!.querySelectorAll<HTMLElement>('[data-city]').forEach(tick=>{const r=tick.getBoundingClientRect(),d=Math.abs(r.left+r.width/2-clientX);if(d<distance){distance=d;nearest=Number(tick.dataset.city)}});
     onPick(nearest);
   };
   const release=(e:React.PointerEvent<HTMLDivElement>)=>{setScrubbing(false);if(e.currentTarget.hasPointerCapture(e.pointerId))e.currentTarget.releasePointerCapture(e.pointerId)};
-  return <div ref={ruler} className={`archive-ruler ${scrubbing?'scrubbing':''}`} role="slider" tabIndex={0} aria-label="City archive" aria-valuemin={1} aria-valuemax={count} aria-valuenow={slot+1} aria-valuetext={`${city.name}, ${censusRegion(city)}`}
+  return <div ref={ruler} className={`archive-ruler ${scrubbing?'scrubbing':''}`} role="slider" tabIndex={0} aria-label="City archive" aria-valuemin={1} aria-valuemax={count} aria-valuenow={slot+1} aria-valuetext={city.name}
     onPointerDown={e=>{if(e.button!==0)return;e.currentTarget.setPointerCapture(e.pointerId);setScrubbing(true);pick(e.clientX)}}
     onPointerMove={e=>{if(scrubbing)pick(e.clientX)}} onPointerUp={release} onPointerCancel={release}
     onKeyDown={e=>{
@@ -114,6 +114,6 @@ function RegionRuler({selected,onPick}:{selected:number;onPick:(index:number)=>v
       if(target===null)return;e.preventDefault();onPick(cityAtSlot(Math.max(0,Math.min(count-1,target))));
     }}>
     <span className="ruler-pill" style={{'--x':x} as CSSProperties} aria-hidden="true">{city.name}</span>
-    {rackRegions.map(region=><div key={region.name} className="ruler-region" aria-hidden="true">{region.cities.map(c=>{const i=cities.indexOf(c);return <span key={c.id} data-city={i} className={`ruler-tick ${i===selected?'active':''}`}><span className="ruler-name">{c.name}</span></span>})}</div>)}
+    {rack.map(c=>{const i=cities.indexOf(c);return <span key={c.id} data-city={i} className={`ruler-tick ${i===selected?'active':''}`} aria-hidden="true"><span className="ruler-name">{c.name}</span></span>})}
   </div>;
 }

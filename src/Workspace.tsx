@@ -2,10 +2,15 @@ import {lazy,Suspense,useState} from 'react';
 import {ArrowLeft,ArrowUpRight,Globe2,Sun,Building2,Leaf,SlidersHorizontal,X,Plus,Minus,Maximize2,Database} from 'lucide-react';
 import {lenses,type City,type Lens} from './data';
 import {useResearch} from './research';
+const PhiladelphiaWorkspace=lazy(()=>import('./philadelphia/Workspace'));
 const CityMap=lazy(()=>import('./CityMap'));
 const icons={satellite:Globe2,solar:Sun,buildings:Building2,vegetation:Leaf};
 
-export default function Workspace({city,lens,onData}:{city:City;lens:Lens;onData:()=>void}){
+export default function Workspace(props:{city:City;lens:Lens;onData:()=>void}){
+ if(props.city.id==='philadelphia')return <Suspense fallback={<main className="workspace"><div className="map-loading">Opening Philadelphia research…</div></main>}><PhiladelphiaWorkspace lens={props.lens} onData={props.onData}/></Suspense>;
+ return <ContextWorkspace {...props}/>;
+}
+function ContextWorkspace({city,lens,onData}:{city:City;lens:Lens;onData:()=>void}){
  const [opacity,setOpacity]=useState(75),[satellite,setSatellite]=useState(true),[threeD,setThreeD]=useState(false),[settings,setSettings]=useState(false),[command,setCommand]=useState({id:0,action:'reset'}),[inspect,setInspect]=useState<string|null>(null);
  const info=lenses[lens],Icon=icons[lens];
  const {row,multiple}=useResearch(city.msaCode);

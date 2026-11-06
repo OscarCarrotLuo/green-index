@@ -1,0 +1,147 @@
+{
+  "selected_before_test": "unet",
+  "test_patches": 187,
+  "test_spatial_blocks": 24,
+  "models": {
+    "unet": {
+      "confusion_matrix": [
+        [
+          5955508,
+          64900,
+          381316,
+          38287
+        ],
+        [
+          63668,
+          1441502,
+          393934,
+          3023
+        ],
+        [
+          415156,
+          363146,
+          2215187,
+          5179
+        ],
+        [
+          182030,
+          6590,
+          30306,
+          667863
+        ]
+      ],
+      "accuracy": 0.8407262425685509,
+      "mean_iou": 0.6883720535161202,
+      "class_iou": {
+        "Other land": 0.8387017637991991,
+        "Tree canopy": 0.6168798461803786,
+        "Grass / shrub": 0.582296678639323,
+        "Water": 0.71560992544558
+      },
+      "class_f1": {
+        "Other land": 0.9122760203005842,
+        "Tree canopy": 0.7630497066775358,
+        "Grass / shrub": 0.7360145369704777,
+        "Water": 0.834233836994993
+      },
+      "vegetation_iou": 0.8198078087158638,
+      "vegetation_f1": 0.9009828453196452,
+      "valid_pixels": 12227595
+    },
+    "random_forest": {
+      "confusion_matrix": [
+        [
+          5639864,
+          125458,
+          400692,
+          273997
+        ],
+        [
+          41360,
+          1563588,
+          266079,
+          31100
+        ],
+        [
+          322137,
+          682867,
+          1915924,
+          77740
+        ],
+        [
+          164668,
+          16778,
+          18031,
+          687312
+        ]
+      ],
+      "accuracy": 0.8020128242716577,
+      "mean_iou": 0.6110475304926105,
+      "class_iou": {
+        "Other land": 0.8093745048919545,
+        "Tree canopy": 0.5733245820851194,
+        "Grass / shrub": 0.5201410626393048,
+        "Water": 0.5413499723540633
+      },
+      "class_f1": {
+        "Other land": 0.8946456388145977,
+        "Tree canopy": 0.7288064886462209,
+        "Grass / shrub": 0.6843326259948844,
+        "Water": 0.7024361528060674
+      },
+      "vegetation_iou": 0.8108124239941967,
+      "vegetation_f1": 0.8955233719964749,
+      "valid_pixels": 12227595
+    }
+  },
+  "ndvi": {
+    "threshold": -0.010000000000000009,
+    "vegetation_iou": 0.82448925468915,
+    "vegetation_f1": 0.9038028068075672
+  },
+  "area_errors": {
+    "ndvi": {
+      "vegetation_error_pp": {
+        "mae_pp": 2.7971709396010755,
+        "bias_pp": 0.4752335661254616
+      }
+    },
+    "random_forest": {
+      "tree_error_pp": {
+        "mae_pp": 4.572095658408233,
+        "bias_pp": 4.071079782473082
+      },
+      "low_vegetation_error_pp": {
+        "mae_pp": 5.701314517786492,
+        "bias_pp": -3.0781072700226075
+      },
+      "vegetation_error_pp": {
+        "mae_pp": 3.1524927183998632,
+        "bias_pp": 0.9929725124504755
+      }
+    },
+    "unet": {
+      "tree_error_pp": {
+        "mae_pp": 3.0593169864197898,
+        "bias_pp": -0.305428607563266
+      },
+      "low_vegetation_error_pp": {
+        "mae_pp": 4.12180114996946,
+        "bias_pp": 0.3111721175575001
+      },
+      "vegetation_error_pp": {
+        "mae_pp": 3.066963120089081,
+        "bias_pp": 0.005743509994234085
+      }
+    }
+  },
+  "limitations": [
+    "Accuracy measures agreement with the official 2018 land-cover product, not independent field truth.",
+    "The reference was itself derived from NAIP and LiDAR; held-out spatial blocks prevent patch leakage but do not make the source independent.",
+    "Grass and shrubs remain one class. No tree species, canopy height, public access or cooling is inferred.",
+    "Coverage denominators use a common official observed non-water land mask.",
+    "No model or threshold was selected using these test results."
+  ],
+  "selection_sha256": "c9c96d18931e527f57d2f95193c2664f4bebe2d9602f2798578d629f53f32a54",
+  "test_patches_with_observed_land": 183
+}

@@ -1,0 +1,19 @@
+id,name,tracts,official_land_km2,official_tree_pct,official_low_vegetation_pct,official_vegetation_pct,model_land_km2,model_tree_pct,model_low_vegetation_pct,model_vegetation_pct,difference_vegetation_pp,difference_tree_pp,difference_low_vegetation_pp,places
+RW,River Wards,15,16.47,7.212,16.679,23.892,16.454,6.004,17.092,23.096,-0.796,-1.208,0.413,Richmond; Bridesburg; Fishtown
+NDEL,North Delaware,20,21.588,11.884,28.932,40.816,21.568,12.708,26.452,39.16,-1.656,0.824,-2.48,Holmesburg; Torresdale; Tacony
+LFNE,Lower Far Northeast,16,28.741,20.168,33.972,54.14,28.719,22.511,31.215,53.726,-0.414,2.343,-2.757,Parkwood Manor; Pennypack; Morrell Park
+CTR,Central,39,14.168,10.862,11.63,22.493,14.156,5.278,13.38,18.658,-3.835,-5.584,1.75,Center City; Northern Liberties; Logan Square
+USW,University Southwest,21,10.641,17.01,17.452,34.462,10.632,14.332,18.383,32.716,-1.746,-2.678,0.931,University City; Kingsessing; Southwest Schuylkill
+UNW,Upper Northwest,27,24.588,39.865,23.286,63.152,24.57,35.842,28.477,64.319,1.167,-4.023,5.191,Chestnut Hill; Mount Airy; Germantown
+UNO,Upper North,33,20.684,16.267,21.936,38.203,20.669,17.058,20.897,37.955,-0.248,0.791,-1.039,West Oak Lane; Olney; Logan
+STH,South,29,12.656,6.795,12.538,19.334,12.647,3.279,12.119,15.399,-3.935,-3.516,-0.419,Grays Ferry; Girard Estates; Point Breeze
+NOR,North,32,22.143,10.268,18.386,28.654,22.126,9.412,19.111,28.523,-0.131,-0.856,0.725,Hunting Park; Allegheny West; Tioga
+LS,Lower South,4,14.341,7.583,20.533,28.116,14.327,8.977,21.115,30.092,1.976,1.394,0.582,Navy Yard; Stadium District; Packer Park
+LNE,Lower Northeast,19,15.271,14.028,20.958,34.986,15.26,14.622,20.6,35.222,0.236,0.594,-0.358,Lawndale; Frankford; Northwood
+CNE,Central Northeast,17,20.909,31.549,23.818,55.367,20.893,34.065,20.822,54.887,-0.48,2.516,-2.996,Rhawnhurst; Fox Chase; Oxford Circle
+WST,West,26,12.048,13.272,14.352,27.623,12.039,11.135,14.421,25.556,-2.067,-2.137,0.069,Cobbs Creek; Haddington; Overbrook
+UFNE,Upper Far Northeast,14,26.79,21.519,34.01,55.529,26.758,23.707,34.515,58.222,2.693,2.188,0.505,Somerton; Bustleton; Byberry
+LSW,Lower Southwest,12,28.858,11.2,25.979,37.179,28.836,12.081,25.481,37.562,0.383,0.881,-0.498,Eastwick; Elmwood; Paschall
+WP,West Park,15,20.23,35.172,26.487,61.659,20.215,33.596,29.723,63.319,1.66,-1.576,3.236,Overbrook; Wynnefield; Wynnefield Heights
+LNO,Lower North,28,12.738,11.104,18.743,29.846,12.728,8.864,19.827,28.691,-1.155,-2.24,1.084,Strawberry Mansion; North Central; Kensington
+LNW,Lower Northwest,17,25.128,48.309,23.085,71.394,25.109,43.651,27.55,71.201,-0.193,-4.658,4.465,Upper Roxborough; East Falls; Andorra

@@ -148,7 +148,7 @@ The palette combines a near-black blue-charcoal ground, cool silver text and pal
 ### Primary
 
 - **Harmony Green** marks keyboard focus, the selected ruler tick and pill, map markers and active interaction cues.
-- **Dossier Green** is the one large saturated surface on the archive screen: the selected city's dossier, with white text at AA contrast or better.
+- **Dossier Green** (`.green-surface`) is the large saturated surface, at most one or two per screen, with white text at AA contrast or better. It marks the featured item: the selected city's dossier on the atlas, the Philadelphia pilot card (green frosted glass) and its exports on the data page, the index formula and pilot summary on the methodology page, and the headline value in the Philadelphia results panel. It never encodes a score.
 - **Action Mint / Action Ink** form the filled catalog-download action. The round map-entry action uses its own paired mint and dark-green tokens.
 
 ### Secondary
@@ -175,7 +175,7 @@ These semantic colors appear in layer icons, legends and geographic context. The
 
 Large headings use light intermediate weights and tight tracking. Operational text stays compact and sentence case. Sizes come from one six-step scale, exposed as `--fs-xs` through `--fs-2xl`: 12 / 14 / 16 / 24 / 40 / 72px. Metadata and labels use 14px on desktop; 12px is reserved for attribution, the brand sub-label, tooltips and chart axis labels, and is the floor in narrow fallbacks. Display headings scale fluidly up to 72px.
 
-The atlas display emphasizes its final word with pale green. City titles are separate from the longer MSA name beneath them. Drawers use the 40px headline (weight 450, line height 1.08); supporting paragraphs use the reading role. Introductory paragraphs use two-tone emphasis: muted text with key phrases in Silver Ink at the same weight. Metric values use tabular numbers; units remain adjacent in smaller text. The archive's WebGL texture also uses Urbanist, sized so the selected file renders at roughly 12 / 14 / 24 / 40px, and reduces long city names to fit the card.
+The atlas display emphasizes its final word with pale green. City titles are separate from the longer MSA name beneath them. Page headings on the data and methodology pages scale fluidly up to 72px; section headings use the 40px headline (weight 450, line height 1.1); supporting paragraphs use the reading role. Introductory paragraphs use two-tone emphasis: muted text with key phrases in Silver Ink at the same weight. Metric values use tabular numbers; units remain adjacent in smaller text. The archive's WebGL texture also uses Urbanist, sized so the selected file renders at roughly 12 / 14 / 24 / 40px, and reduces long city names to fit the card.
 
 ## Layout
 
@@ -185,15 +185,17 @@ On desktop screens at least 761px wide and 640px tall, the atlas home is three s
 
 A shared fluid page gutter aligns the header, atlas, archive dossier and city controls. The primary content limit is 1680px; the header has a 1800px limit. At wide desktop sizes the atlas uses a 30% / 70% text-to-map grid, and the archive spans the content width. The geographic map and archive are large surfaces with room around their controls.
 
-The city map fills the viewport (100svh, minimum height 700px). Its lower insight surface has three columns (1.45fr / 1fr / .85fr), a height of 166px and a 38px bottom offset. The lens rail and map tools share a baseline 24px above that surface. The source drawer occupies the right edge at 530px wide, with a 16px outer inset and its own scrolling area.
+The city map fills the viewport (100svh, minimum height 700px). Its lower insight surface has three columns (1.45fr / 1fr / .85fr), a height of 166px and a 38px bottom offset. The lens rail and map tools share a baseline 24px above that surface. Data collection (`#/data`) and methodology (`#/method`) are full pages beneath the sticky header, not drawers. The data page lays the 20 cities out as cards in a four-column grid (three at 1200px, two at 1000px, one below 760px).
 
-At 1200px the layout tightens gaps and controls. At 1000px the atlas becomes a stacked composition, the dossier wraps its lens links to a second row, and the city insight surface becomes 174px tall. The WebGL archive is enabled from 761px; narrower layouts use the DOM archive. At 760px the gutter becomes 22px and the map insight content wraps to two columns. At 1600px and above the atlas and archive receive more vertical space. These are implemented breakpoints, not a claim that a dedicated mobile design has been completed.
+At 1200px the layout tightens gaps and controls. At 1000px the atlas becomes a stacked composition, the dossier wraps its lens links to a second row, and the city insight surface becomes 174px tall. The WebGL archive is enabled from 761px, and from 560px on devices with a fine hovering pointer (a narrow desktop window); phones and narrower layouts use the DOM archive, whose selected file stacks the population label above its value as the WebGL plate does. At 760px the gutter becomes 22px and the map insight content wraps to two columns. At 1600px and above the atlas and archive receive more vertical space. These are implemented breakpoints, not a claim that a dedicated mobile design has been completed.
 
 ## Elevation & Depth
 
 Glass combines a directional translucent gradient, three inset rim highlights and an ambient shadow. The common surface uses blur (24px) and saturation (120%); the city insight bar uses blur (20px) and saturation (125%). The sidecar carries the exact gradient-bearing component snippets and shadow values, because the frontmatter schema does not model these treatments.
 
 **The Material Rule.** Retain transparency, lit inset edges and soft shadows together when extending a glass control. The map remains perceptible behind it.
+
+**Frosted glass.** Following the reference's semi-transparent panels, `.frost` (silver) and `.frost-smoke` (dark) pair a translucent fill and a 20px backdrop blur (150% saturation) with a 1px light edge, a lit top rim and one diagonal sheen. They are used only where something sits behind them to blur: city cards (the lower half of each single card is frosted over its own aerial image, flush with the card edges and with a dark base so text keeps AA contrast over bright imagery), the data toolbar (in the page flow, never over the cards), data notes, method cards and the Philadelphia results panel, legend and hover card over the map. The data and method pages carry a faint dot grid and two soft glows so the glass reads against the ground.
 
 The archive uses one orthographic 3D scene. Transparent extruded files share a lean while their yaw opens toward the rack ends; the selected file moves forward, enlarges and faces the camera. Side files use silver transparent textures, while the selected texture gains a green gradient. This is structural depth rather than a drop-shadow substitute.
 
@@ -229,15 +231,17 @@ Research status is a quiet glass pill with a status ring and an explicit label. 
 
 The selected plate displays the city, region, MSA code and metropolitan population. Both WebGL and DOM fallback presentations use the same population label and unit. All 20 cities remain in the continuous cyclic selection model. Dragging and horizontal wheel motion scrub the rack; release settles it. The rack is ordered by Census region (Northeast, Midwest, South, West) and by population rank within each region, so its order never reads as a performance ranking. Left and right arrow keys move selection, Enter opens the selected city, and the region ruler supplies named direct selections.
 
-The region ruler is a single row of ticks, one per city, with a wider gap between regions and no labels at rest. It is a slider: drag along it, click a tick, or use the arrow, Home and End keys. The selected city rides above its tick in a Harmony Green pill with a short drop line; other city names appear on hover. The dossier below is a saturated green surface that follows the same selected city and exposes its three lenses. The sidecar's archive specimen records the DOM fallback face; the full 3D composition and exponential settling remain in the application scene.
+The archive ruler is a single row of evenly spaced ticks, one per city in rack order, with no region gaps and no labels at rest. It is a slider: drag along it, click a tick, or use the arrow, Home and End keys. The selected city rides above its tick in a Harmony Green pill with a short drop line; other city names appear on hover. The data page's selected region chip uses the same pill. The dossier below is a saturated green surface that follows the same selected city and exposes its three lenses. The sidecar's archive specimen records the DOM fallback face; the full 3D composition and exponential settling remain in the application scene.
 
 ### City index chart
 
 The index section pairs its heading and status with a single-series column chart on a glass surface: neutral silver columns at most 24px wide, 4px rounded caps, square at the baseline, recessive gridlines at 0/25/50/75/100. Columns are buttons that open their city; hover or focus shows the city and value. Columns appear only for validated scores within one common reference. Until then the chart shows a hatched schematic silhouette that is not attached to any city, labelled "Illustrative layout · no scores yet".
 
-### Reading drawers
+### Data and methodology pages
 
-Source and methodology content use the same glass material, with a stronger charcoal gradient for sustained reading. The drawer traps focus, closes with Escape and restores the prior focus. Its heading begins directly with content. Search rows, research statuses and the catalog action retain the shared text and icon vocabulary.
+The data page opens with a page heading, then one toolbar: city search, Census-region chips with counts and the catalog download. Each city is a glass card in population order: a desaturated satellite thumbnail with the city code and population rank, the city and region, MSA code and 2025 population, then one row per research layer (solar, buildings, vegetation) linking to that lens. A hollow status ring reads "Pending"; a filled dot carries the attached value. `#/data/<city>` scrolls to and outlines that card; `#/data/find` focuses the search. Population order is labelled as not a green ranking. Notes, exports and official sources follow in four columns.
+
+The methodology page is a reading page: three component cards with their formulas, the index formula on a quiet glass block, and the Philadelphia pilot with a sticky summary beside its three layers (`#/method/philadelphia`). Cards over the flat page ground carry no backdrop blur.
 
 ### Geographic imagery
 

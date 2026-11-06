@@ -1,0 +1,60 @@
+{
+  "scope": "City of Philadelphia; 2018 census tracts",
+  "imagery_year": 2017,
+  "reference_product_year": 2018,
+  "labels": [
+    "Other land",
+    "Tree canopy",
+    "Grass / shrub",
+    "Water"
+  ],
+  "reference_source": "https://www.pasda.psu.edu/uci/DataSummary.aspx?dataset=1587",
+  "imagery_source": "https://planetarycomputer.microsoft.com/dataset/naip",
+  "study_type": "Historical cross-section; no present-day or trend claim",
+  "official_definition": "Native-grid mapped class area divided by observed non-water land",
+  "model_definition": "Observed city land on the 1 m grid; water excluded using the same official reference mask for both models and reference",
+  "assessment": [
+    "Accuracy measures agreement with the official 2018 land-cover product, not independent field truth.",
+    "The reference was itself derived from NAIP and LiDAR; held-out spatial blocks prevent patch leakage but do not make the source independent.",
+    "Grass and shrubs remain one class. No tree species, canopy height, public access or cooling is inferred.",
+    "Coverage denominators use a common official observed non-water land mask.",
+    "No model or threshold was selected using these test results."
+  ],
+  "minimum_cross_split_patch_gap_m": 256,
+  "runtime": {
+    "python": "3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]",
+    "platform": "macOS-26.6.2-arm64-arm-64bit",
+    "packages": {
+      "numpy": "2.5.4",
+      "pandas": "3.1.0",
+      "geopandas": "1.2.0",
+      "rasterio": "1.5.2",
+      "scikit-learn": "1.9.1",
+      "torch": "2.14.1",
+      "joblib": "1.6.0",
+      "requests": "2.34.2",
+      "matplotlib": "3.11.2",
+      "Pillow": "13.0.0",
+      "nbformat": "5.11.1",
+      "nbclient": "0.11.0",
+      "nbconvert": "7.17.2",
+      "ipykernel": "7.4.0"
+    },
+    "gdal_reference_warp_python": "/opt/anaconda3/envs/geospatial/bin/python",
+    "local_kernel": "philadelphia-pilot"
+  },
+  "hashes": {
+    "data/processed/philadelphia_2018/vegetation_2d/patch_manifest.csv": "0b8cfa18ff347808d38ba69ba576a890bebef67365c5dd5187e08d9e1c7c2c9f",
+    "data/processed/philadelphia_2018/vegetation_2d/spatial_split.json": "932ddc0bf0d2deffee3713da5c00d71405c9ed62e2388f696c76576fcf8c4ff3",
+    "data/processed/philadelphia_2018/vegetation_2d/grid.json": "66f16cea3ead93a03c510aa2e04aa9fd4374de769e0c1423d07c27dc7a52b477",
+    "data/raw/philadelphia_2018/naip_2017/stac_items.json": "c1ddb4a0cb48827cafa291cd77b5eb4a178cb156b39e1fedcc3a8c0c6f6ca294",
+    "outputs/vegetation_2d/selection_before_test.json": "c9c96d18931e527f57d2f95193c2664f4bebe2d9602f2798578d629f53f32a54",
+    "outputs/vegetation_2d/test_report.json": "5aa89664befddb396053b504a114c788a940b3e25edd530a7bbcba39b3089a21",
+    "outputs/vegetation_2d/prediction_1m.tif": "b339084e3685f5a7414a1ef81ebf823d14d7be97990a0cf54633da309dc07d72",
+    "outputs/vegetation_2d/official_tracts.csv": "ef9fbcb3c7562e298af1d13492ede28e38290c76718b6e88152b37735a07ca20",
+    "outputs/vegetation_2d/model_tracts.csv": "c48a076626e3b1c6c417e9f491de03e1bae8a06278e7c7530f5035ea6f52ee46",
+    "src/vegetation_2d.py": "9652fdfb8ff0f6c1664ce97350ecac202f4c58bbf3866eb339e5237b4c687cb4",
+    "scripts/prepare_vegetation_2d.py": "a5e6765397518cef5e9f7bcd9e56786d0a1a33ee256255cde61368b89345613a",
+    "scripts/infer_vegetation_2d.py": "882401d97e4854e8338f1ae1ed43add81fb167af083e7a9dd9f92f2676c472e8"
+  }
+}

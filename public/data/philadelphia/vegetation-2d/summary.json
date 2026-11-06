@@ -1,0 +1,142 @@
+{
+  "period": "2017\u20132018",
+  "tracts": 384,
+  "official": {
+    "tree_pct": 20.198850037205446,
+    "low_vegetation_pct": 23.331507535729166,
+    "vegetation_pct": 43.53035757293461,
+    "vegetation_area_km2": 151.48201146466812,
+    "land_area_km2": 347.99165435492176,
+    "source_coverage_pct": 99.86855480506722
+  },
+  "model": {
+    "model": "unet",
+    "tracts": 384,
+    "tree_pct": 19.549868689594447,
+    "low_vegetation_pct": 23.783344245705308,
+    "vegetation_pct": 43.333212935299755,
+    "tree_area_km2": 67.976415,
+    "low_vegetation_area_km2": 82.696539,
+    "vegetation_area_km2": 150.672954,
+    "land_area_km2": 347.707783,
+    "source_coverage_pct": 99.86897771736263,
+    "reference_tree_pct_1m": 20.19750417838648,
+    "reference_low_vegetation_pct_1m": 23.33205926540908,
+    "resolution_m": 1,
+    "windows": 2700,
+    "elapsed_seconds": 170.22999811172485,
+    "prediction_sha256": "b339084e3685f5a7414a1ef81ebf823d14d7be97990a0cf54633da309dc07d72",
+    "selection_sha256": "c9c96d18931e527f57d2f95193c2664f4bebe2d9602f2798578d629f53f32a54",
+    "inference_scope": "City of Philadelphia, including training and held-out spatial blocks; inference totals are not independent validation",
+    "denominator": "Observed city land on the 1 m grid; water excluded using the same official reference mask for both models and reference",
+    "name": "U-Net"
+  },
+  "test_patches": 187,
+  "test_blocks": 24,
+  "training_patches": 508,
+  "validation_patches": 167,
+  "minimum_gap_m": 256,
+  "models": [
+    {
+      "id": "ndvi",
+      "label": "NDVI",
+      "mean_iou": null,
+      "tree_iou": null,
+      "low_vegetation_iou": null,
+      "vegetation_iou": 0.82448925468915,
+      "vegetation_mae_pp": 2.7971709396010755
+    },
+    {
+      "id": "random_forest",
+      "label": "Random Forest",
+      "mean_iou": 0.6110475304926105,
+      "tree_iou": 0.5733245820851194,
+      "low_vegetation_iou": 0.5201410626393048,
+      "vegetation_iou": 0.8108124239941967,
+      "vegetation_mae_pp": 3.1524927183998632
+    },
+    {
+      "id": "unet",
+      "label": "U-Net",
+      "mean_iou": 0.6883720535161202,
+      "tree_iou": 0.6168798461803786,
+      "low_vegetation_iou": 0.582296678639323,
+      "vegetation_iou": 0.8198078087158638,
+      "vegetation_mae_pp": 3.066963120089081
+    }
+  ],
+  "examples": [
+    {
+      "id": "p_10368_19584",
+      "center": [
+        -75.05139211690398,
+        40.0439813335309
+      ],
+      "rgb": "/data/philadelphia/vegetation-2d/gallery/p_10368_19584_rgb.png",
+      "reference": "/data/philadelphia/vegetation-2d/gallery/p_10368_19584_reference.png",
+      "unet": "/data/philadelphia/vegetation-2d/gallery/p_10368_19584_unet.png",
+      "random_forest": "/data/philadelphia/vegetation-2d/gallery/p_10368_19584_random_forest.png"
+    },
+    {
+      "id": "p_10624_23168",
+      "center": [
+        -75.00937780923563,
+        40.041685858605256
+      ],
+      "rgb": "/data/philadelphia/vegetation-2d/gallery/p_10624_23168_rgb.png",
+      "reference": "/data/philadelphia/vegetation-2d/gallery/p_10624_23168_reference.png",
+      "unet": "/data/philadelphia/vegetation-2d/gallery/p_10624_23168_unet.png",
+      "random_forest": "/data/philadelphia/vegetation-2d/gallery/p_10624_23168_random_forest.png"
+    },
+    {
+      "id": "p_10368_6528",
+      "center": [
+        -75.20444251720886,
+        40.043812370206275
+      ],
+      "rgb": "/data/philadelphia/vegetation-2d/gallery/p_10368_6528_rgb.png",
+      "reference": "/data/philadelphia/vegetation-2d/gallery/p_10368_6528_reference.png",
+      "unet": "/data/philadelphia/vegetation-2d/gallery/p_10368_6528_unet.png",
+      "random_forest": "/data/philadelphia/vegetation-2d/gallery/p_10368_6528_random_forest.png"
+    },
+    {
+      "id": "p_12416_10368",
+      "center": [
+        -75.15938487925884,
+        40.025431156574506
+      ],
+      "rgb": "/data/philadelphia/vegetation-2d/gallery/p_12416_10368_rgb.png",
+      "reference": "/data/philadelphia/vegetation-2d/gallery/p_12416_10368_reference.png",
+      "unet": "/data/philadelphia/vegetation-2d/gallery/p_12416_10368_unet.png",
+      "random_forest": "/data/philadelphia/vegetation-2d/gallery/p_12416_10368_random_forest.png"
+    },
+    {
+      "id": "p_12928_9600",
+      "center": [
+        -75.16837406161254,
+        40.020805447067865
+      ],
+      "rgb": "/data/philadelphia/vegetation-2d/gallery/p_12928_9600_rgb.png",
+      "reference": "/data/philadelphia/vegetation-2d/gallery/p_12928_9600_reference.png",
+      "unet": "/data/philadelphia/vegetation-2d/gallery/p_12928_9600_unet.png",
+      "random_forest": "/data/philadelphia/vegetation-2d/gallery/p_12928_9600_random_forest.png"
+    },
+    {
+      "id": "p_14464_10368",
+      "center": [
+        -75.15934195932297,
+        40.006979203430035
+      ],
+      "rgb": "/data/philadelphia/vegetation-2d/gallery/p_14464_10368_rgb.png",
+      "reference": "/data/philadelphia/vegetation-2d/gallery/p_14464_10368_reference.png",
+      "unet": "/data/philadelphia/vegetation-2d/gallery/p_14464_10368_unet.png",
+      "random_forest": "/data/philadelphia/vegetation-2d/gallery/p_14464_10368_random_forest.png"
+    }
+  ],
+  "tile_bounds": [
+    -75.28285869699164,
+    39.866047965712305,
+    -74.95529830814952,
+    40.138558127925286
+  ]
+}

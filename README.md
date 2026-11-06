@@ -9,7 +9,7 @@ An interactive Green Transition Atlas for the MUSA 6950 final project.
 - A dotted U.S. map with the 20 largest metropolitan statistical areas, selected by Census Vintage 2025 population estimates.
 - A draggable 3D glass city archive with twenty direct-selection indicators and keyboard navigation.
 - Satellite, rooftop solar preview, building footprints, and vegetation map views.
-- A data catalog and methodology panel. Research scores remain pending until validated, comparable results are connected.
+- A data collection page with one card per city (`#/data`) and a methodology page (`#/method`). Research scores remain pending until validated, comparable results are connected.
 
 Population order is not a green-performance ranking. Map centers are navigation anchors, not MSA boundaries. Solar polygons are illustrative; satellite and OpenStreetMap layers provide geographic context.
 

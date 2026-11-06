@@ -1,0 +1,682 @@
+tract_geoid,PRIMARY_PROP_TYPE_EPA_CALC,n,median_site_eui,q25,q75,displayable
+42101000100,Financial Office,1,,,,False
+42101000100,Hotel,3,,,,False
+42101000100,Multifamily Housing,13,42.800000000000004,29.8,49.1,True
+42101000100,Museum,1,,,,False
+42101000100,Office,10,69.30000000000001,63.7,78.72500000000001,True
+42101000100,Parking,2,,,,False
+42101000200,College/University,2,,,,False
+42101000200,Convention Center,2,,,,False
+42101000200,Hotel,2,,,,False
+42101000200,Multifamily Housing,7,49.2,36.5,57.55,True
+42101000200,Office,4,,,,False
+42101000200,Other - Technology/Science,1,,,,False
+42101000200,Parking,1,,,,False
+42101000300,College/University,1,,,,False
+42101000300,Courthouse,1,,,,False
+42101000300,Hotel,3,,,,False
+42101000300,K-12 School,1,,,,False
+42101000300,Medical Office,1,,,,False
+42101000300,Multifamily Housing,7,34.6,29.35,51.1,True
+42101000300,Museum,3,,,,False
+42101000300,Office,7,75.4,63.150000000000006,80.15,True
+42101000300,Other - Specialty Hospital,1,,,,False
+42101000300,Other - Technology/Science,1,,,,False
+42101000300,Worship Facility,1,,,,False
+42101000401,Multifamily Housing,6,53.5,39.325,74.35,True
+42101000401,Museum,1,,,,False
+42101000401,Office,6,68.25,63.375,76.2,True
+42101000401,Parking,1,,,,False
+42101000402,Enclosed Mall,1,,,,False
+42101000402,Hotel,3,,,,False
+42101000402,Multifamily Housing,7,55.2,41.0,60.15,True
+42101000402,Office,26,72.35,59.575,79.55,True
+42101000402,Parking,1,,,,False
+42101000500,Courthouse,1,,,,False
+42101000500,Hotel,3,,,,False
+42101000500,K-12 School,1,,,,False
+42101000500,Medical Office,1,,,,False
+42101000500,Multifamily Housing,2,,,,False
+42101000500,Office,14,73.80000000000001,57.175,79.05000000000001,True
+42101000500,Social/Meeting Hall,1,,,,False
+42101000600,Hotel,1,,,,False
+42101000600,Multifamily Housing,4,,,,False
+42101000600,Office,7,59.5,56.6,85.8,True
+42101000600,Parking,2,,,,False
+42101000700,College/University,1,,,,False
+42101000700,Hotel,2,,,,False
+42101000700,K-12 School,1,,,,False
+42101000700,Multifamily Housing,14,64.45,47.6,72.725,True
+42101000700,Office,7,61.4,55.6,84.75,True
+42101000700,Parking,1,,,,False
+42101000700,Performing Arts,1,,,,False
+42101000700,Residence Hall/Dormitory,1,,,,False
+42101000700,Social/Meeting Hall,1,,,,False
+42101000801,Multifamily Housing,2,,,,False
+42101000803,Hotel,1,,,,False
+42101000803,Multifamily Housing,6,78.3,32.325,106.575,True
+42101000803,Parking,1,,,,False
+42101000804,College/University,2,,,,False
+42101000804,Hotel,1,,,,False
+42101000804,Multifamily Housing,10,52.35,40.15,78.325,True
+42101000804,Office,7,77.0,66.45,89.30000000000001,True
+42101000804,Parking,2,,,,False
+42101000804,Performing Arts,1,,,,False
+42101000901,College/University,1,,,,False
+42101000901,Hotel,1,,,,False
+42101000901,Library,1,,,,False
+42101000901,Multifamily Housing,6,44.75,38.5,76.65,True
+42101000901,Office,1,,,,False
+42101000901,Parking,1,,,,False
+42101000902,College/University,1,,,,False
+42101000902,Hospital (General Medical & Surgical),1,,,,False
+42101000902,Laboratory,2,,,,False
+42101000902,Medical Office,4,,,,False
+42101000902,Multifamily Housing,4,,,,False
+42101000902,Office,1,,,,False
+42101000902,Residence Hall/Dormitory,1,,,,False
+42101001001,K-12 School,1,,,,False
+42101001001,Multifamily Housing,1,,,,False
+42101001001,Office,1,,,,False
+42101001002,Multifamily Housing,2,,,,False
+42101001002,Museum,1,,,,False
+42101001002,Office,2,,,,False
+42101001002,Parking,1,,,,False
+42101001101,College/University,1,,,,False
+42101001101,Multifamily Housing,3,,,,False
+42101001101,Residence Hall/Dormitory,2,,,,False
+42101001202,College/University,1,,,,False
+42101001202,Hospital (General Medical & Surgical),1,,,,False
+42101001202,K-12 School,1,,,,False
+42101001202,Multifamily Housing,4,,,,False
+42101001202,Office,1,,,,False
+42101001202,Other - Technology/Science,1,,,,False
+42101001202,Performing Arts,1,,,,False
+42101001202,Residence Hall/Dormitory,1,,,,False
+42101001202,Senior Care Community,1,,,,False
+42101001300,Office,1,,,,False
+42101001400,Medical Office,1,,,,False
+42101001400,Multifamily Housing,2,,,,False
+42101001500,College/University,1,,,,False
+42101001600,K-12 School,1,,,,False
+42101001800,K-12 School,1,,,,False
+42101001800,Multifamily Housing,1,,,,False
+42101002000,Self-Storage Facility,1,,,,False
+42101002200,K-12 School,1,,,,False
+42101002300,K-12 School,1,,,,False
+42101002300,Multifamily Housing,1,,,,False
+42101002300,Office,1,,,,False
+42101002400,K-12 School,2,,,,False
+42101002400,Multifamily Housing,2,,,,False
+42101002400,Self-Storage Facility,2,,,,False
+42101002500,K-12 School,1,,,,False
+42101002801,K-12 School,1,,,,False
+42101002802,K-12 School,2,,,,False
+42101002900,Multifamily Housing,1,,,,False
+42101002900,Supermarket/Grocery Store,1,,,,False
+42101003002,Multifamily Housing,1,,,,False
+42101003300,Distribution Center,1,,,,False
+42101003300,K-12 School,1,,,,False
+42101003300,Other - Lodging/Residential,1,,,,False
+42101003600,K-12 School,1,,,,False
+42101003600,Multifamily Housing,2,,,,False
+42101003701,K-12 School,1,,,,False
+42101003702,K-12 School,2,,,,False
+42101003702,Worship Facility,1,,,,False
+42101003800,Manufacturing/Industrial Plant,1,,,,False
+42101003800,Office,1,,,,False
+42101003800,Other - Public Services,1,,,,False
+42101003800,Retail Store,1,,,,False
+42101003800,Self-Storage Facility,1,,,,False
+42101003800,Supermarket/Grocery Store,2,,,,False
+42101003800,Wholesale Club/Supercenter,1,,,,False
+42101003901,Other - Technology/Science,1,,,,False
+42101003902,Other - Education,1,,,,False
+42101004001,K-12 School,2,,,,False
+42101004002,Hospital (General Medical & Surgical),1,,,,False
+42101004101,Multifamily Housing,1,,,,False
+42101004201,K-12 School,1,,,,False
+42101004202,K-12 School,2,,,,False
+42101004202,Senior Care Community,1,,,,False
+42101005000,Distribution Center,1,,,,False
+42101005000,Hotel,1,,,,False
+42101005000,Office,9,64.5,51.7,93.3,True
+42101005500,Self-Storage Facility,1,,,,False
+42101005600,Supermarket/Grocery Store,1,,,,False
+42101006000,K-12 School,1,,,,False
+42101006100,Distribution Center,1,,,,False
+42101006300,Multifamily Housing,1,,,,False
+42101006400,K-12 School,1,,,,False
+42101006500,K-12 School,1,,,,False
+42101006600,Multifamily Housing,3,,,,False
+42101006700,Multifamily Housing,1,,,,False
+42101006900,Office,1,,,,False
+42101007101,Senior Care Community,1,,,,False
+42101007102,K-12 School,1,,,,False
+42101007200,K-12 School,1,,,,False
+42101007200,Non-Refrigerated Warehouse,1,,,,False
+42101007400,K-12 School,1,,,,False
+42101007400,Manufacturing/Industrial Plant,1,,,,False
+42101007400,Other - Public Services,1,,,,False
+42101007700,College/University,2,,,,False
+42101007700,Office,1,,,,False
+42101008000,Hospital (General Medical & Surgical),1,,,,False
+42101008000,K-12 School,1,,,,False
+42101008200,K-12 School,1,,,,False
+42101008301,Ice/Curling Rink,1,,,,False
+42101008301,Multifamily Housing,1,,,,False
+42101008301,Senior Care Community,1,,,,False
+42101008400,K-12 School,2,,,,False
+42101008400,Other - Technology/Science,1,,,,False
+42101008601,K-12 School,1,,,,False
+42101008601,Multifamily Housing,3,,,,False
+42101008602,K-12 School,1,,,,False
+42101008602,Retail Store,1,,,,False
+42101008702,K-12 School,1,,,,False
+42101008702,Multifamily Housing,1,,,,False
+42101008801,Multifamily Housing,3,,,,False
+42101008801,Office,2,,,,False
+42101008801,Other - Technology/Science,1,,,,False
+42101008802,Multifamily Housing,1,,,,False
+42101008802,Non-Refrigerated Warehouse,1,,,,False
+42101008802,Office,2,,,,False
+42101009000,College/University,3,,,,False
+42101009000,Medical Office,1,,,,False
+42101009000,Multifamily Housing,2,,,,False
+42101009000,Office,1,,,,False
+42101009000,Residence Hall/Dormitory,6,79.9,68.7,83.6,True
+42101009100,Medical Office,2,,,,False
+42101009100,Multifamily Housing,1,,,,False
+42101009200,Office,1,,,,False
+42101009400,K-12 School,1,,,,False
+42101009400,Multifamily Housing,2,,,,False
+42101009500,K-12 School,1,,,,False
+42101009500,Other - Public Services,1,,,,False
+42101009801,K-12 School,1,,,,False
+42101010000,K-12 School,2,,,,False
+42101010300,Worship Facility,2,,,,False
+42101010400,K-12 School,1,,,,False
+42101010500,K-12 School,3,,,,False
+42101010500,Multifamily Housing,2,,,,False
+42101010500,Prison/Incarceration,1,,,,False
+42101010500,Senior Care Community,1,,,,False
+42101010700,K-12 School,2,,,,False
+42101010900,K-12 School,1,,,,False
+42101010900,Multifamily Housing,1,,,,False
+42101011100,K-12 School,2,,,,False
+42101011100,Non-Refrigerated Warehouse,1,,,,False
+42101011100,Office,1,,,,False
+42101011100,Other - Technology/Science,1,,,,False
+42101011100,Retail Store,1,,,,False
+42101011100,Self-Storage Facility,1,,,,False
+42101011100,Supermarket/Grocery Store,1,,,,False
+42101011200,K-12 School,1,,,,False
+42101011300,K-12 School,1,,,,False
+42101011500,K-12 School,1,,,,False
+42101011700,College/University,2,,,,False
+42101011700,K-12 School,1,,,,False
+42101011800,K-12 School,1,,,,False
+42101011900,Multifamily Housing,2,,,,False
+42101011900,Other - Public Services,1,,,,False
+42101012000,College/University,1,,,,False
+42101012000,Multifamily Housing,1,,,,False
+42101012000,Parking,1,,,,False
+42101012100,Multifamily Housing,3,,,,False
+42101012201,Multifamily Housing,2,,,,False
+42101012201,Supermarket/Grocery Store,1,,,,False
+42101012203,Hotel,1,,,,False
+42101012203,Office,1,,,,False
+42101012203,Retail Store,1,,,,False
+42101012204,Drinking Water Treatment & Distribution,1,,,,False
+42101012204,Multifamily Housing,2,,,,False
+42101012204,Office,1,,,,False
+42101012204,Senior Care Community,1,,,,False
+42101012500,College/University,1,,,,False
+42101012500,K-12 School,1,,,,False
+42101012500,Library,1,,,,False
+42101012500,Multifamily Housing,7,38.4,36.05,45.75,True
+42101012500,Museum,1,,,,False
+42101012500,Office,2,,,,False
+42101012500,Parking,1,,,,False
+42101012500,Residence Hall/Dormitory,1,,,,False
+42101013100,Office,1,,,,False
+42101013200,Multifamily Housing,2,,,,False
+42101013200,Senior Care Community,1,,,,False
+42101013200,Worship Facility,1,,,,False
+42101013300,K-12 School,3,,,,False
+42101013300,Multifamily Housing,3,,,,False
+42101013300,Office,1,,,,False
+42101013401,Multifamily Housing,1,,,,False
+42101013601,Multifamily Housing,1,,,,False
+42101013602,Multifamily Housing,2,,,,False
+42101013700,Multifamily Housing,1,,,,False
+42101013800,K-12 School,2,,,,False
+42101013800,"Repair Services (Vehicle, Shoe, Locksmith, etc.)",1,,,,False
+42101013900,Multifamily Housing,1,,,,False
+42101013900,Senior Care Community,1,,,,False
+42101014000,K-12 School,2,,,,False
+42101014000,Multifamily Housing,1,,,,False
+42101014100,Multifamily Housing,1,,,,False
+42101014100,Non-Refrigerated Warehouse,1,,,,False
+42101014100,Office,1,,,,False
+42101014100,Self-Storage Facility,1,,,,False
+42101014200,K-12 School,1,,,,False
+42101014200,Multifamily Housing,8,29.950000000000003,17.325,89.825,True
+42101014200,Parking,1,,,,False
+42101014200,Supermarket/Grocery Store,1,,,,False
+42101014300,Multifamily Housing,1,,,,False
+42101014300,Office,1,,,,False
+42101014400,K-12 School,1,,,,False
+42101014400,Multifamily Housing,2,,,,False
+42101014400,Office,1,,,,False
+42101014500,Multifamily Housing,2,,,,False
+42101014500,Office,1,,,,False
+42101014600,College/University,4,,,,False
+42101014600,K-12 School,1,,,,False
+42101014600,Residence Hall/Dormitory,1,,,,False
+42101014700,College/University,3,,,,False
+42101014700,K-12 School,1,,,,False
+42101014700,Multifamily Housing,1,,,,False
+42101014700,Other - Technology/Science,1,,,,False
+42101014800,Multifamily Housing,1,,,,False
+42101014900,K-12 School,1,,,,False
+42101014900,Multifamily Housing,1,,,,False
+42101015102,K-12 School,2,,,,False
+42101015102,Multifamily Housing,1,,,,False
+42101015102,Retail Store,1,,,,False
+42101015200,K-12 School,4,,,,False
+42101015300,College/University,1,,,,False
+42101015300,K-12 School,1,,,,False
+42101015600,Multifamily Housing,1,,,,False
+42101015600,Refrigerated Warehouse,1,,,,False
+42101015700,Non-Refrigerated Warehouse,2,,,,False
+42101015800,K-12 School,1,,,,False
+42101015800,Multifamily Housing,3,,,,False
+42101016000,K-12 School,1,,,,False
+42101016000,Office,1,,,,False
+42101016100,K-12 School,2,,,,False
+42101016100,Other - Technology/Science,1,,,,False
+42101016100,Refrigerated Warehouse,1,,,,False
+42101016200,K-12 School,1,,,,False
+42101016200,Office,1,,,,False
+42101016300,K-12 School,2,,,,False
+42101016300,Non-Refrigerated Warehouse,2,,,,False
+42101016400,K-12 School,1,,,,False
+42101016400,Multifamily Housing,1,,,,False
+42101016400,Office,1,,,,False
+42101016600,Multifamily Housing,1,,,,False
+42101016702,Parking,1,,,,False
+42101016901,K-12 School,1,,,,False
+42101016902,K-12 School,2,,,,False
+42101017000,Distribution Center,1,,,,False
+42101017000,K-12 School,1,,,,False
+42101017000,Office,1,,,,False
+42101017000,Refrigerated Warehouse,1,,,,False
+42101017000,Supermarket/Grocery Store,1,,,,False
+42101017100,Adult Education,1,,,,False
+42101017100,Distribution Center,1,,,,False
+42101017100,K-12 School,2,,,,False
+42101017100,Other - Public Services,1,,,,False
+42101017201,K-12 School,1,,,,False
+42101017300,Multifamily Housing,1,,,,False
+42101017300,Residence Hall/Dormitory,2,,,,False
+42101017300,Self-Storage Facility,1,,,,False
+42101017400,Residence Hall/Dormitory,2,,,,False
+42101017500,K-12 School,1,,,,False
+42101017601,Distribution Center,1,,,,False
+42101017601,K-12 School,1,,,,False
+42101017601,Multifamily Housing,1,,,,False
+42101017601,Non-Refrigerated Warehouse,1,,,,False
+42101017602,Multifamily Housing,1,,,,False
+42101017702,K-12 School,1,,,,False
+42101017702,Non-Refrigerated Warehouse,2,,,,False
+42101017800,K-12 School,2,,,,False
+42101017800,Multifamily Housing,2,,,,False
+42101017900,K-12 School,1,,,,False
+42101017900,Self-Storage Facility,1,,,,False
+42101018300,K-12 School,1,,,,False
+42101018300,Other - Technology/Science,1,,,,False
+42101018800,K-12 School,1,,,,False
+42101018800,Self-Storage Facility,1,,,,False
+42101019000,Retail Store,1,,,,False
+42101019100,K-12 School,2,,,,False
+42101019100,Non-Refrigerated Warehouse,1,,,,False
+42101019100,Self-Storage Facility,1,,,,False
+42101019200,K-12 School,1,,,,False
+42101019501,K-12 School,2,,,,False
+42101019501,Multifamily Housing,2,,,,False
+42101019502,K-12 School,1,,,,False
+42101019700,K-12 School,1,,,,False
+42101019900,K-12 School,2,,,,False
+42101020000,College/University,4,,,,False
+42101020000,Hospital (General Medical & Surgical),1,,,,False
+42101020000,Medical Office,1,,,,False
+42101020000,Parking,1,,,,False
+42101020101,College/University,3,,,,False
+42101020101,Multifamily Housing,1,,,,False
+42101020101,Other - Technology/Science,1,,,,False
+42101020101,Parking,1,,,,False
+42101020200,Multifamily Housing,1,,,,False
+42101020200,Non-Refrigerated Warehouse,1,,,,False
+42101020200,Self-Storage Facility,1,,,,False
+42101020500,Manufacturing/Industrial Plant,1,,,,False
+42101020500,Non-Refrigerated Warehouse,1,,,,False
+42101020500,Other - Public Services,1,,,,False
+42101020500,Self-Storage Facility,1,,,,False
+42101020600,College/University,1,,,,False
+42101020600,Drinking Water Treatment & Distribution,1,,,,False
+42101020600,Multifamily Housing,1,,,,False
+42101020600,Office,1,,,,False
+42101020700,College/University,1,,,,False
+42101020700,K-12 School,1,,,,False
+42101020700,Multifamily Housing,1,,,,False
+42101020800,Multifamily Housing,1,,,,False
+42101021000,Multifamily Housing,3,,,,False
+42101021100,K-12 School,1,,,,False
+42101021200,Multifamily Housing,1,,,,False
+42101021400,Office,1,,,,False
+42101021500,K-12 School,1,,,,False
+42101021500,Multifamily Housing,1,,,,False
+42101021600,K-12 School,1,,,,False
+42101021700,K-12 School,1,,,,False
+42101021700,Multifamily Housing,3,,,,False
+42101021700,Other - Specialty Hospital,1,,,,False
+42101021700,Supermarket/Grocery Store,1,,,,False
+42101021800,Self-Storage Facility,1,,,,False
+42101021900,K-12 School,1,,,,False
+42101022000,K-12 School,1,,,,False
+42101022000,Multifamily Housing,2,,,,False
+42101022000,Residential Care Facility,1,,,,False
+42101023600,K-12 School,1,,,,False
+42101023600,Multifamily Housing,4,,,,False
+42101023600,Senior Care Community,1,,,,False
+42101023700,Multifamily Housing,7,76.0,61.3,100.15,True
+42101023800,Multifamily Housing,2,,,,False
+42101023800,Self-Storage Facility,1,,,,False
+42101023900,K-12 School,1,,,,False
+42101023900,Multifamily Housing,5,68.1,57.2,89.8,True
+42101024000,Multifamily Housing,3,,,,False
+42101024100,Multifamily Housing,4,,,,False
+42101024100,Senior Care Community,1,,,,False
+42101024300,K-12 School,1,,,,False
+42101024300,Multifamily Housing,2,,,,False
+42101024500,K-12 School,1,,,,False
+42101024600,Non-Refrigerated Warehouse,1,,,,False
+42101024700,K-12 School,1,,,,False
+42101024700,Supermarket/Grocery Store,1,,,,False
+42101025200,K-12 School,1,,,,False
+42101025200,Senior Care Community,1,,,,False
+42101025300,K-12 School,1,,,,False
+42101025700,Senior Care Community,1,,,,False
+42101025700,Supermarket/Grocery Store,1,,,,False
+42101025800,Multifamily Housing,1,,,,False
+42101026000,K-12 School,1,,,,False
+42101026000,Worship Facility,1,,,,False
+42101026100,K-12 School,1,,,,False
+42101026100,Multifamily Housing,1,,,,False
+42101026400,K-12 School,1,,,,False
+42101026600,K-12 School,1,,,,False
+42101026700,K-12 School,2,,,,False
+42101026800,K-12 School,1,,,,False
+42101026800,Multifamily Housing,2,,,,False
+42101026800,Other - Technology/Science,1,,,,False
+42101027000,Multifamily Housing,2,,,,False
+42101027300,K-12 School,2,,,,False
+42101027300,Supermarket/Grocery Store,1,,,,False
+42101027401,K-12 School,1,,,,False
+42101027600,Multifamily Housing,2,,,,False
+42101027700,Multifamily Housing,2,,,,False
+42101027800,K-12 School,2,,,,False
+42101027800,Multifamily Housing,1,,,,False
+42101027902,K-12 School,1,,,,False
+42101027902,Other - Education,1,,,,False
+42101027902,Stadium (Closed),1,,,,False
+42101028000,Multifamily Housing,1,,,,False
+42101028100,K-12 School,1,,,,False
+42101028200,Multifamily Housing,2,,,,False
+42101028300,K-12 School,1,,,,False
+42101028300,Senior Care Community,1,,,,False
+42101028400,K-12 School,1,,,,False
+42101028500,K-12 School,1,,,,False
+42101028600,K-12 School,2,,,,False
+42101028700,Other - Public Services,1,,,,False
+42101028800,K-12 School,1,,,,False
+42101028901,Distribution Center,1,,,,False
+42101028901,K-12 School,1,,,,False
+42101028901,Manufacturing/Industrial Plant,1,,,,False
+42101028902,Non-Refrigerated Warehouse,1,,,,False
+42101029100,K-12 School,1,,,,False
+42101029100,Non-Refrigerated Warehouse,1,,,,False
+42101029100,Retail Store,1,,,,False
+42101029100,Self-Storage Facility,1,,,,False
+42101029100,Strip Mall,1,,,,False
+42101029200,Other - Specialty Hospital,1,,,,False
+42101029300,K-12 School,1,,,,False
+42101029300,"Repair Services (Vehicle, Shoe, Locksmith, etc.)",1,,,,False
+42101029400,K-12 School,1,,,,False
+42101029800,K-12 School,1,,,,False
+42101029800,Manufacturing/Industrial Plant,1,,,,False
+42101029900,K-12 School,1,,,,False
+42101030000,Hospital (General Medical & Surgical),1,,,,False
+42101030100,K-12 School,1,,,,False
+42101030100,Multifamily Housing,1,,,,False
+42101030100,Other - Technology/Science,1,,,,False
+42101030200,Other - Public Services,1,,,,False
+42101030502,K-12 School,1,,,,False
+42101030700,Multifamily Housing,1,,,,False
+42101030700,Other - Technology/Science,1,,,,False
+42101030900,K-12 School,1,,,,False
+42101030900,Self-Storage Facility,1,,,,False
+42101031000,K-12 School,2,,,,False
+42101031300,K-12 School,1,,,,False
+42101031401,K-12 School,1,,,,False
+42101031402,Library,1,,,,False
+42101031502,K-12 School,1,,,,False
+42101031502,Retail Store,1,,,,False
+42101031502,Supermarket/Grocery Store,1,,,,False
+42101031600,K-12 School,1,,,,False
+42101031600,Supermarket/Grocery Store,1,,,,False
+42101031800,Multifamily Housing,1,,,,False
+42101031800,Other - Public Services,1,,,,False
+42101031900,Non-Refrigerated Warehouse,1,,,,False
+42101032300,K-12 School,1,,,,False
+42101032300,Self-Storage Facility,1,,,,False
+42101032500,K-12 School,1,,,,False
+42101033000,K-12 School,2,,,,False
+42101033102,K-12 School,1,,,,False
+42101033102,Multifamily Housing,1,,,,False
+42101033200,K-12 School,2,,,,False
+42101033300,Office,1,,,,False
+42101033300,Residential Care Facility,1,,,,False
+42101033300,Senior Care Community,1,,,,False
+42101033400,Multifamily Housing,4,,,,False
+42101033400,Retail Store,2,,,,False
+42101033400,Self-Storage Facility,1,,,,False
+42101033500,K-12 School,1,,,,False
+42101033500,Retail Store,1,,,,False
+42101033500,Supermarket/Grocery Store,1,,,,False
+42101033600,Multifamily Housing,3,,,,False
+42101033701,K-12 School,1,,,,False
+42101033701,Multifamily Housing,1,,,,False
+42101033701,Office,1,,,,False
+42101033701,Residential Care Facility,1,,,,False
+42101033701,Strip Mall,1,,,,False
+42101033701,Supermarket/Grocery Store,1,,,,False
+42101033702,Multifamily Housing,1,,,,False
+42101033702,Self-Storage Facility,1,,,,False
+42101033800,K-12 School,1,,,,False
+42101033800,Manufacturing/Industrial Plant,1,,,,False
+42101033800,Multifamily Housing,1,,,,False
+42101033800,Refrigerated Warehouse,1,,,,False
+42101034100,K-12 School,1,,,,False
+42101034200,Multifamily Housing,1,,,,False
+42101034200,Senior Care Community,1,,,,False
+42101034400,K-12 School,2,,,,False
+42101034501,Multifamily Housing,1,,,,False
+42101034600,Distribution Center,1,,,,False
+42101034600,Hotel,1,,,,False
+42101034600,Multifamily Housing,1,,,,False
+42101034600,Non-Refrigerated Warehouse,2,,,,False
+42101034600,Self-Storage Facility,1,,,,False
+42101034702,K-12 School,1,,,,False
+42101034702,Senior Care Community,1,,,,False
+42101034801,K-12 School,1,,,,False
+42101034900,Manufacturing/Industrial Plant,1,,,,False
+42101035100,Multifamily Housing,1,,,,False
+42101035100,Residential Care Facility,1,,,,False
+42101035200,College/University,3,,,,False
+42101035200,K-12 School,1,,,,False
+42101035301,Hospital (General Medical & Surgical),1,,,,False
+42101035301,K-12 School,1,,,,False
+42101035301,Strip Mall,1,,,,False
+42101035302,Supermarket/Grocery Store,1,,,,False
+42101035500,K-12 School,1,,,,False
+42101035500,Multifamily Housing,1,,,,False
+42101035500,Other - Technology/Science,1,,,,False
+42101035500,Self-Storage Facility,1,,,,False
+42101035500,Wholesale Club/Supercenter,1,,,,False
+42101035601,Supermarket/Grocery Store,1,,,,False
+42101035602,Office,1,,,,False
+42101035602,Other - Education,1,,,,False
+42101035702,Manufacturing/Industrial Plant,2,,,,False
+42101035800,K-12 School,1,,,,False
+42101035800,Multifamily Housing,1,,,,False
+42101035900,K-12 School,1,,,,False
+42101035900,Multifamily Housing,2,,,,False
+42101035900,Non-Refrigerated Warehouse,1,,,,False
+42101035900,Other - Services,1,,,,False
+42101035900,Retail Store,1,,,,False
+42101036000,Hotel,1,,,,False
+42101036000,Manufacturing/Industrial Plant,2,,,,False
+42101036000,Multifamily Housing,1,,,,False
+42101036000,Non-Refrigerated Warehouse,1,,,,False
+42101036000,Retail Store,1,,,,False
+42101036000,Senior Care Community,2,,,,False
+42101036100,Adult Education,1,,,,False
+42101036100,Self-Storage Facility,1,,,,False
+42101036203,K-12 School,1,,,,False
+42101036203,Multifamily Housing,1,,,,False
+42101036301,K-12 School,2,,,,False
+42101036301,Movie Theater,1,,,,False
+42101036301,Wholesale Club/Supercenter,1,,,,False
+42101036303,Non-Refrigerated Warehouse,1,,,,False
+42101036303,Office,1,,,,False
+42101036303,Other - Public Services,1,,,,False
+42101036400,Adult Education,1,,,,False
+42101036400,Distribution Center,7,56.6,44.650000000000006,84.35,True
+42101036400,Mailing Center/Post Office,1,,,,False
+42101036400,Manufacturing/Industrial Plant,3,,,,False
+42101036400,Non-Refrigerated Warehouse,3,,,,False
+42101036400,Office,5,11.1,9.3,57.4,True
+42101036400,Refrigerated Warehouse,1,,,,False
+42101036501,Worship Facility,1,,,,False
+42101036502,Self-Storage Facility,1,,,,False
+42101036600,Hotel,2,,,,False
+42101036600,Multifamily Housing,6,41.95,35.525,46.050000000000004,True
+42101036600,Museum,1,,,,False
+42101036600,Office,1,,,,False
+42101036600,Refrigerated Warehouse,1,,,,False
+42101036600,Self-Storage Facility,1,,,,False
+42101036700,Multifamily Housing,6,35.3,26.65,41.475,True
+42101036700,Office,3,,,,False
+42101036700,Self-Storage Facility,1,,,,False
+42101036900,College/University,3,,,,False
+42101036900,Hotel,2,,,,False
+42101036900,Laboratory,2,,,,False
+42101036900,Medical Office,1,,,,False
+42101036900,Multifamily Housing,1,,,,False
+42101036900,Office,10,68.9,60.125,88.4,True
+42101036900,Parking,1,,,,False
+42101036900,Residence Hall/Dormitory,1,,,,False
+42101037200,Supermarket/Grocery Store,1,,,,False
+42101037300,Worship Facility,1,,,,False
+42101037500,K-12 School,1,,,,False
+42101037500,Multifamily Housing,1,,,,False
+42101037600,Courthouse,1,,,,False
+42101037600,Data Center,1,,,,False
+42101037600,K-12 School,2,,,,False
+42101037600,Multifamily Housing,8,56.2,46.825,75.475,True
+42101037600,Self-Storage Facility,1,,,,False
+42101037700,College/University,5,162.5,126.3,198.5,True
+42101037700,K-12 School,2,,,,False
+42101037800,Non-Refrigerated Warehouse,2,,,,False
+42101037800,Wastewater Treatment Plant,1,,,,False
+42101037900,K-12 School,1,,,,False
+42101037900,Manufacturing/Industrial Plant,2,,,,False
+42101037900,Multifamily Housing,1,,,,False
+42101037900,Retail Store,2,,,,False
+42101037900,Supermarket/Grocery Store,1,,,,False
+42101038100,Distribution Center,3,,,,False
+42101038100,Manufacturing/Industrial Plant,1,,,,False
+42101038100,Non-Refrigerated Warehouse,2,,,,False
+42101038100,Self-Storage Facility,2,,,,False
+42101038200,Distribution Center,1,,,,False
+42101038200,Manufacturing/Industrial Plant,2,,,,False
+42101038200,Medical Office,1,,,,False
+42101038200,Multifamily Housing,1,,,,False
+42101038200,Non-Refrigerated Warehouse,4,,,,False
+42101038200,Retail Store,3,,,,False
+42101038200,Self-Storage Facility,2,,,,False
+42101038200,Wholesale Club/Supercenter,1,,,,False
+42101038300,Hospital (General Medical & Surgical),1,,,,False
+42101038300,K-12 School,5,74.8,44.9,92.9,True
+42101038300,Manufacturing/Industrial Plant,1,,,,False
+42101038300,Non-Refrigerated Warehouse,2,,,,False
+42101038300,Office,1,,,,False
+42101038300,Refrigerated Warehouse,1,,,,False
+42101038300,"Repair Services (Vehicle, Shoe, Locksmith, etc.)",1,,,,False
+42101038400,Multifamily Housing,2,,,,False
+42101038400,Retail Store,1,,,,False
+42101038500,Other - Technology/Science,1,,,,False
+42101038600,K-12 School,2,,,,False
+42101038700,Hospital (General Medical & Surgical),1,,,,False
+42101038700,K-12 School,1,,,,False
+42101038700,Worship Facility,1,,,,False
+42101038800,K-12 School,1,,,,False
+42101038800,Multifamily Housing,1,,,,False
+42101038900,K-12 School,1,,,,False
+42101039000,Distribution Center,1,,,,False
+42101039000,K-12 School,2,,,,False
+42101039000,Retail Store,2,,,,False
+42101039000,Self-Storage Facility,1,,,,False
+42101980000,K-12 School,1,,,,False
+42101980000,Multifamily Housing,1,,,,False
+42101980000,Museum,1,,,,False
+42101980000,Office,2,,,,False
+42101980000,Residence Hall/Dormitory,1,,,,False
+42101980300,Distribution Center,4,,,,False
+42101980300,Food Service,1,,,,False
+42101980300,K-12 School,1,,,,False
+42101980300,Manufacturing/Industrial Plant,1,,,,False
+42101980300,Medical Office,2,,,,False
+42101980300,Multifamily Housing,1,,,,False
+42101980300,Non-Refrigerated Warehouse,3,,,,False
+42101980300,Office,3,,,,False
+42101980300,Other - Services,1,,,,False
+42101980300,Retail Store,1,,,,False
+42101980300,Wholesale Club/Supercenter,1,,,,False
+42101980400,Hotel,1,,,,False
+42101980600,Stadium (Open),2,,,,False
+42101980700,Food Sales,1,,,,False
+42101980700,Non-Refrigerated Warehouse,5,7.9,5.1000000000000005,9.5,True
+42101980700,Other - Utility,1,,,,False
+42101980700,Refrigerated Warehouse,6,73.35,50.95,86.9,True
+42101980700,Retail Store,3,,,,False
+42101980700,Self-Storage Facility,2,,,,False
+42101980700,Supermarket/Grocery Store,1,,,,False
+42101980700,Wastewater Treatment Plant,1,,,,False
+42101980700,Wholesale Club/Supercenter,2,,,,False
+42101980900,Automobile Dealership,1,,,,False
+42101980900,Distribution Center,1,,,,False
+42101980900,Food Service,1,,,,False
+42101980900,Hotel,8,78.5,70.22500000000001,85.45,True
+42101980900,Manufacturing/Industrial Plant,1,,,,False
+42101980900,Non-Refrigerated Warehouse,6,31.15,22.575,50.075,True
+42101980900,Office,1,,,,False
+42101980900,Other - Services,1,,,,False
+42101980900,Parking,1,,,,False
+42101980900,Self-Storage Facility,1,,,,False
+42101980900,Wastewater Treatment Plant,1,,,,False
+42101989100,Drinking Water Treatment & Distribution,1,,,,False
+42101989100,Office,1,,,,False
+42101989100,Prison/Incarceration,2,,,,False
